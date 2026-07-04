@@ -16,7 +16,7 @@ VPN для Android. Сделан для себя и для людей — что
 
 👉 Задонатить USDT (TRC20): TB3Qn2guzVdj93kUi43KG8gQY6mruGZbNG
 
-👉 Задонатить BTC: 16Bs15Mpu2HAYyVjgiLdwQC1yzLpbf2qyv
+👉 Задонатить BTC (BTC): 16Bs15Mpu2HAYyVjgiLdwQC1yzLpbf2qyv
 
 👉 Задонатить ETH (ERC20): 0x3704ecc83ea8b6a852d63dc82c0badcd761d8e6f
 
