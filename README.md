@@ -12,7 +12,13 @@ VPN для Android. Сделан для себя и для людей — что
 
 Если приложение оказалось полезным и хочется поддержать — буду рад донату. Коплю на Mac, а если накоплю — попробую сделать версию и для iOS тоже. Так что ваш донат буквально приближает VPN для iPhone.
 
-👉 [Задонатить](https://pay.cloudtips.ru/p/8c90d7a5)
+👉 [Задонатить RUB](https://pay.cloudtips.ru/p/8c90d7a5)
+
+👉 Задонатить USDT (TRC20): TB3Qn2guzVdj93kUi43KG8gQY6mruGZbNG
+
+👉 Задонатить BTC: 16Bs15Mpu2HAYyVjgiLdwQC1yzLpbf2qyv
+
+👉 Задонатить ETH (ERC20): 0x3704ecc83ea8b6a852d63dc82c0badcd761d8e6f
 
 Спасибо всем, кто пользуется ❤️
 
