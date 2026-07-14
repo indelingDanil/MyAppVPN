@@ -13,7 +13,7 @@ ALL="$ROOT/all.txt"
 SURV="$ROOT/survivors_tg.txt"
 CSV="$ROOT/results.csv"
 
-MIN_MBPS="${MIN_MBPS:-8}"   # 1 МБ/с = 8 Мбит/с (download в CSV — mbps)
+MIN_MBPS="${MIN_MBPS:-4}"   # 0.5 МБ/с = 4 Мбит/с (download в CSV — mbps)
 CAP="${CAP:-300}"
 
 python3 "$ROOT/scripts/select.py" "$CSV" "$MIN_MBPS" "$CAP" > "$OUT/filtered.txt"
