@@ -13,8 +13,8 @@ ALL="$ROOT/all.txt"
 SURV="$ROOT/survivors_tg.txt"
 CSV="$ROOT/results.csv"
 
-MIN_MBPS="${MIN_MBPS:-4}"   # 0.5 МБ/с = 4 Мбит/с (download в CSV — mbps)
-CAP="${CAP:-300}"
+MIN_MBPS="${MIN_MBPS:-8}"   # 1 МБ/с = 8 Мбит/с (download в CSV — mbps)
+CAP="${CAP:-500}"
 
 python3 "$ROOT/scripts/select.py" "$CSV" "$MIN_MBPS" "$CAP" > "$OUT/filtered.txt"
 
@@ -38,11 +38,11 @@ cat > "$OUT/stats.md" <<EOF
 | Этап | Кол-во |
 |------|-------:|
 | Уникальных конфигов (all) | $N |
-| Прошли Telegram + живость | $A |
+| Прошли Cloudflare + живость | $A |
 | Прошли по скорости (≥ ${MIN_MBPS} Мбит/с), cap top-$CAP | $K |
 
 > Скорость мерилась с runner'а GitHub (дата-центр, обычно США) — это **грубый** отсев.
 > Реальную скорость из вашего ISP смотрите локально в v2rayN: правый клик по группе → «тест скорости».
 EOF
 
-echo "Готово: all=$N, telegram=$A, speed=$K -> $OUT/" >&2
+echo "Готово: all=$N, cf=$A, speed=$K -> $OUT/" >&2
