@@ -13,6 +13,8 @@ SCHEMES='vless://'
 TMP="$(mktemp -d)"
 trap 'rm -rf "$TMP"' EXIT
 RAW="$TMP/raw.txt"
+SRC="$TMP/src"
+DEC="$TMP/dec"
 : > "$RAW"
 
 if [ ! -f "$SOURCES" ]; then
@@ -26,39 +28,39 @@ while IFS= read -r line || [ -n "$line" ]; do
   case "$url" in \#*) continue ;; esac
 
   # github.com/OWNER/REPO/raw/[refs/heads/]BRANCH/PATH отдаёт 302-редирект и
-  # часто ратлимитится с IP Actions-раннера (тогда часть источников молча
-  # отваливается). Бьём НАПРЯМУЮ в raw.githubusercontent.com — 200, CDN, без редиректа.
+  # ратлимитится с IP Actions-раннера. Бьём НАПРЯМУЮ в raw.githubusercontent.com.
   url="$(printf '%s' "$url" \
     | sed -E 's#^https?://github\.com/([^/]+)/([^/]+)/raw/refs/heads/#https://raw.githubusercontent.com/\1/\2/#' \
     | sed -E 's#^https?://github\.com/([^/]+)/([^/]+)/raw/#https://raw.githubusercontent.com/\1/\2/#')"
 
   echo "Fetching: $url" >&2
-  body="$(curl -fsSL --max-time 90 --retry 4 --retry-delay 3 --retry-all-errors "$url" 2>/dev/null || true)"
-  if [ -z "$body" ]; then
-    echo "  -> пусто/ошибка, пропуск" >&2
+  # ВАЖНО: качаем в ФАЙЛ, не в переменную. Раньше `printf "$body" | grep -q`
+  # ловил Broken pipe на больших телах (grep -q закрывает пайп после первого
+  # совпадения, printf получает SIGPIPE, pipefail роняет проверку) — и крупные
+  # источники молча пропадали, оставался только самый маленький файл.
+  if ! curl -fsSL --max-time 90 --retry 4 --retry-delay 3 --retry-all-errors -o "$SRC" "$url" 2>/dev/null; then
+    echo "  -> ошибка загрузки, пропуск" >&2
     continue
   fi
+  [ -s "$SRC" ] || { echo "  -> пусто, пропуск" >&2; continue; }
 
   before="$(grep -acE "$SCHEMES" "$RAW" 2>/dev/null || true)"
-  if printf '%s' "$body" | grep -qiE "$SCHEMES"; then
-    printf '%s\n' "$body" >> "$RAW"
+  if grep -qiE "$SCHEMES" "$SRC"; then
+    cat "$SRC" >> "$RAW"
+  elif base64 -d "$SRC" > "$DEC" 2>/dev/null && grep -qiE "$SCHEMES" "$DEC"; then
+    cat "$DEC" >> "$RAW"
+    echo "  -> декодировано из base64" >&2
   else
-    decoded="$(printf '%s' "$body" | base64 -d 2>/dev/null || true)"
-    if printf '%s' "$decoded" | grep -qiE "$SCHEMES"; then
-      printf '%s\n' "$decoded" >> "$RAW"
-      echo "  -> декодировано из base64" >&2
-    else
-      echo "  -> конфигов не найдено, пропуск" >&2
-      continue
-    fi
+    echo "  -> конфигов не найдено, пропуск" >&2
+    continue
   fi
   after="$(grep -acE "$SCHEMES" "$RAW" 2>/dev/null || true)"
   echo "  -> +$(( ${after:-0} - ${before:-0} )) vless (итого ${after:-0})" >&2
 done < "$SOURCES"
 
-RAW_COUNT="$(grep -acE "$SCHEMES" "$RAW" || true)"
+RAW_COUNT="$(grep -acE "$SCHEMES" "$RAW" 2>/dev/null || true)"
 { grep -aiE "^$SCHEMES" "$RAW" || true; } | python3 "$ROOT/scripts/dedup.py" > "$OUT"
-UNIQ_COUNT="$(grep -cE '://' "$OUT" || true)"
+UNIQ_COUNT="$(grep -cE '://' "$OUT" 2>/dev/null || true)"
 
 echo "Скачано строк-конфигов: ${RAW_COUNT:-0}" >&2
 echo "Уникальных после дедупа: ${UNIQ_COUNT:-0} -> $OUT" >&2
