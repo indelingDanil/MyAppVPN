@@ -68,6 +68,18 @@ VPN для Android. Сделан для себя и для людей — что
 
 Серверы берутся из открытых источников (**[zieng2/wl](https://github.com/zieng2/wl)** Universal + **[igareck](https://github.com/igareck/vpn-configs-for-russia)**) и обновляются каждый час — чтобы отмычка не затупилась. А чтобы выбрать действительно рабочий сервер, приложение проверяет каждый по реальной доступности Telegram: простого пинга недостаточно — сервер может «пинговаться», но трафик не пропускать.
 
+## 🧪 Бета: авто-фильтр прокси-листа
+
+Экспериментальное дополнение (ветка [`proxylist`](../../tree/proxylist)): GitHub Actions раз в час отбирает публичные подписки и оставляет только те **VLESS**-серверы, через которые реально открывается Telegram и которые проходят грубый порог скорости (≥ 1 МБ/с). Обновляется автоматически.
+
+Готовый plain-список для подписки в приложении:
+
+```
+https://raw.githubusercontent.com/indelingDanil/MyAppVPN/proxylist/output/filtered.txt
+```
+
+Подробности и оговорки — в [README ветки proxylist](../../tree/proxylist#readme). ⚠️ Это бета: список и формат могут меняться.
+
 ## Как пользоваться
 
 Всё просто:
@@ -167,6 +179,18 @@ Minimum Android version: 8.0
 In Russia, carriers use so-called whitelists — they only pass "approved" addresses and cut everything else. The app uses up-to-date VLESS servers that work through these restrictions like a picklock: traffic goes where *you* want, not where the carrier allows.
 
 Servers are sourced from public repositories (**[zieng2/wl](https://github.com/zieng2/wl)** Universal + **[igareck](https://github.com/igareck/vpn-configs-for-russia)**) and refreshed every hour — so the picklock doesn't get dull. To pick a truly working server, the app checks each one against real Telegram reachability: a simple ping isn't enough — a server can respond to pings but still not pass traffic.
+
+## 🧪 Beta: proxy-list auto-filter
+
+An experimental companion (the [`proxylist`](../../tree/proxylist) branch): an hourly GitHub Action filters public subscriptions and keeps only the **VLESS** servers that actually reach Telegram through the proxy and pass a rough speed gate (≥ 1 MB/s). Updates automatically.
+
+Ready-made plain list to subscribe in the app:
+
+```
+https://raw.githubusercontent.com/indelingDanil/MyAppVPN/proxylist/output/filtered.txt
+```
+
+Details and disclaimers — in the [proxylist branch README](../../tree/proxylist#readme). ⚠️ This is beta: the list and format may change.
 
 ## How to use
 

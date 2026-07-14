@@ -1,0 +1,6 @@
+# Скрипты обязаны иметь LF-переводы строк — иначе bash на Linux-runner
+# упадёт на '\r'. Принудительно нормализуем.
+*.sh   text eol=lf
+*.py   text eol=lf
+*.yml  text eol=lf
+*.txt  text eol=lf
