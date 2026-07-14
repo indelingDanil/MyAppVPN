@@ -2,11 +2,6 @@
 # Строки, начинающиеся с #, и пустые строки игнорируются.
 # Поддерживается plain-текст (vless:// ... по строкам) и base64-подписки.
 
-# Прямой хост raw.githubusercontent.com (github.com/.../raw/ отдаёт 302 и
-# ратлимитится с раннера; fetch.sh всё равно нормализует, но так нагляднее).
-https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/main/githubmirror/1.txt
-https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/main/githubmirror/6.txt
-https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/main/githubmirror/22.txt
-https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/main/githubmirror/23.txt
-https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/main/githubmirror/24.txt
-https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/main/githubmirror/25.txt
+# На время тестов — только источник 26 (обход по SNI/CIDR, ~98% Reality,
+# российские SNI типа max.ru/ya.ru). fetch.sh нормализует github.com/raw -> raw.
+https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/main/githubmirror/26.txt

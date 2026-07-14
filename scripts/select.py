@@ -1,8 +1,14 @@
 #!/usr/bin/env python3
 """Отбирает из results.csv рабочие конфиги и печатает их (по одному на строку).
 
-Критерии: status == "passed" И download (mbps) >= MIN_MBPS.
-Сортировка по download (быстрые сверху), опциональный cap top-N.
+Критерии:
+  1. status == "passed" И download (mbps) >= MIN_MBPS.
+  2. Тип защиты: оставляем только Reality и TLS. `security=none` и конфиги без
+     явного security выкидываем — плейнтекст-VLESS первым режется РФ-DPI, и
+     "подключился, но интернета нет" чаще всего именно из-за них.
+
+Порядок вывода: сперва Reality (стойче к DPI), потом TLS; внутри каждого яруса —
+по скорости (быстрые сверху). Опциональный cap top-N.
 
 Usage: select.py <results.csv> <min_mbps> <cap>
 Столбцы CSV xray-knife v10:
@@ -12,12 +18,23 @@ import sys
 import csv
 
 
+def security_tier(link):
+    """0 = reality, 1 = tls, None = слабый (none/без security) -> выкинуть."""
+    low = link.lower()
+    if "security=reality" in low:
+        return 0
+    if "security=tls" in low:
+        return 1
+    return None
+
+
 def main():
     path = sys.argv[1]
     min_mbps = float(sys.argv[2]) if len(sys.argv) > 2 else 8.0
     cap = int(sys.argv[3]) if len(sys.argv) > 3 else 0  # 0 = без ограничения
 
     rows = []
+    dropped_weak = 0
     try:
         with open(path, newline="", encoding="utf-8", errors="ignore") as f:
             reader = csv.DictReader(f)
@@ -33,20 +50,32 @@ def main():
                 link = (r.get("link") or "").strip()
                 if not link:
                     continue
-                rows.append((dl, link))
+                tier = security_tier(link)
+                if tier is None:
+                    dropped_weak += 1
+                    continue
+                rows.append((tier, dl, link))
     except FileNotFoundError:
         return  # нет CSV -> пустой вывод
 
-    rows.sort(key=lambda x: x[0], reverse=True)
+    # Reality (tier 0) → TLS (tier 1); внутри яруса — по скорости (desc).
+    rows.sort(key=lambda x: (x[0], -x[1]))
+
+    reality = sum(1 for t, _, _ in rows if t == 0)
+    tls = sum(1 for t, _, _ in rows if t == 1)
+    sys.stderr.write(
+        "отбор: reality=%d, tls=%d, выкинуто слабых (none/без security)=%d\n"
+        % (reality, tls, dropped_weak)
+    )
+
     if cap and cap > 0:
-        dropped = max(0, len(rows) - cap)
-        if dropped:
+        if len(rows) > cap:
             sys.stderr.write(
-                "cap top-%d: отброшено %d медленных конфигов\n" % (cap, dropped)
+                "cap top-%d: отброшено ещё %d\n" % (cap, len(rows) - cap)
             )
         rows = rows[:cap]
 
-    for _, link in rows:
+    for _, _, link in rows:
         sys.stdout.write(link + "\n")
 
 
