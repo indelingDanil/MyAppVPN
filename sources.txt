@@ -1,0 +1,9 @@
+# Список подписок для фильтрации — по одному URL на строку.
+# Строки, начинающиеся с #, и пустые строки игнорируются.
+# Поддерживается plain-текст (vless:// ... по строкам) и base64-подписки.
+
+# Прямой хост raw.githubusercontent.com (github.com/.../raw/ отдаёт 302 и
+# ратлимитится с раннера; fetch.sh всё равно нормализует, но так нагляднее).
+https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/main/githubmirror/1.txt
+https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/main/githubmirror/6.txt
+https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/main/githubmirror/22.txt

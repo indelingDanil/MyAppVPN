@@ -1,0 +1,85 @@
+name: proxylist
+
+# ВАЖНО: этот файл должен лежать в ветке по умолчанию (main), иначе cron не сработает
+# (GitHub запускает schedule только из workflow-файлов ветки по умолчанию).
+# Сама работа идёт в ветке proxylist: checkout ниже переключается на неё, и туда же
+# коммитится результат — история main остаётся чистой.
+
+on:
+  schedule:
+    - cron: '0 * * * *'   # раз в час (UTC)
+  workflow_dispatch: {}    # ручной запуск кнопкой
+
+concurrency:
+  group: proxylist
+  cancel-in-progress: true
+
+permissions:
+  contents: write
+
+jobs:
+  filter:
+    runs-on: ubuntu-latest
+    timeout-minutes: 50
+    env:
+      XK_VERSION: v10.0.0
+      TARGET_BRANCH: proxylist
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: proxylist          # весь пайплайн (скрипты, sources, output) живёт здесь
+          fetch-depth: 0
+
+      - name: Cache xray-knife
+        id: cache-xk
+        uses: actions/cache@v4
+        with:
+          path: bin
+          key: xray-knife-${{ env.XK_VERSION }}-linux-64
+
+      - name: Install xray-knife
+        if: steps.cache-xk.outputs.cache-hit != 'true'
+        run: |
+          set -euo pipefail
+          mkdir -p bin
+          url="https://github.com/lilendian0x00/xray-knife/releases/download/${XK_VERSION}/Xray-knife-linux-64.zip"
+          echo "Downloading $url"
+          curl -fsSL "$url" -o xk.zip
+          unzip -o xk.zip -d bin
+          # бинарь может лежать в подпапке — найдём и вытащим в bin/
+          binpath="$(find bin -type f -iname 'xray-knife*' ! -iname '*.zip' | head -n1)"
+          if [ "$binpath" != "bin/xray-knife" ]; then
+            cp "$binpath" bin/xray-knife
+          fi
+          chmod +x bin/xray-knife
+          ls -la bin
+
+      - name: Add xray-knife to PATH
+        run: echo "$PWD/bin" >> "$GITHUB_PATH"
+
+      - name: Verify tool
+        run: |
+          chmod +x bin/xray-knife || true
+          xray-knife --version || xray-knife http --help | head -n 20
+
+      - name: Fetch & dedup subscriptions
+        run: bash scripts/fetch.sh
+
+      - name: Filter (Telegram + speed)
+        run: bash scripts/filter.sh
+
+      - name: Build output
+        run: bash scripts/build_output.sh
+
+      - name: Commit results
+        run: |
+          set -euo pipefail
+          git config user.name  "indelingDanil"
+          git config user.email "106833130+indelingDanil@users.noreply.github.com"
+          git add output/
+          if git diff --cached --quiet; then
+            echo "Изменений в output/ нет."
+          else
+            git commit -m "chore: update filtered list [skip ci]"
+            git push origin "HEAD:${TARGET_BRANCH}"
+          fi
