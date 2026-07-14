@@ -7,6 +7,13 @@ ROOT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 SOURCES="$ROOT/sources.txt"
 OUT="$ROOT/all.txt"
 
+# В matrix-режиме источник приходит одним URL аргументом (по одному на job) —
+# тогда игнорируем sources.txt и качаем только его.
+if [ "${1:-}" != "" ]; then
+  SOURCES="$(mktemp)"
+  printf '%s\n' "$1" > "$SOURCES"
+fi
+
 # Приложение MyAppVPN понимает только VLESS — фильтруем и публикуем только его.
 SCHEMES='vless://'
 

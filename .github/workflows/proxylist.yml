@@ -1,14 +1,13 @@
 name: proxylist
 
-# ВАЖНО: этот файл должен лежать в ветке по умолчанию (main), иначе cron не сработает
+# ВАЖНО: файл должен лежать в ветке по умолчанию (main), иначе cron не сработает
 # (GitHub запускает schedule только из workflow-файлов ветки по умолчанию).
-# Сама работа идёт в ветке proxylist: checkout ниже переключается на неё, и туда же
-# коммитится результат — история main остаётся чистой.
+# Работа идёт в ветке proxylist: checkout переключается на неё, туда же коммит.
 
 on:
   schedule:
     - cron: '0 * * * *'   # раз в час (UTC)
-  workflow_dispatch: {}    # ручной запуск кнопкой
+  workflow_dispatch: {}
 
 concurrency:
   group: proxylist
@@ -18,17 +17,21 @@ permissions:
   contents: write
 
 jobs:
-  filter:
+  # Каждый источник — отдельный параллельный job (matrix): fetch + xray-knife тест.
+  test:
     runs-on: ubuntu-latest
-    timeout-minutes: 50
+    timeout-minutes: 30
+    strategy:
+      fail-fast: false
+      matrix:
+        source: ['26', '1', '6', '22', '23', '24', '25']
     env:
       XK_VERSION: v10.0.0
-      TARGET_BRANCH: proxylist
     steps:
       - uses: actions/checkout@v4
         with:
-          ref: proxylist          # весь пайплайн (скрипты, sources, output) живёт здесь
-          fetch-depth: 0
+          ref: proxylist
+          fetch-depth: 1
 
       - name: Cache xray-knife
         id: cache-xk
@@ -43,33 +46,52 @@ jobs:
           set -euo pipefail
           mkdir -p bin
           url="https://github.com/lilendian0x00/xray-knife/releases/download/${XK_VERSION}/Xray-knife-linux-64.zip"
-          echo "Downloading $url"
           curl -fsSL "$url" -o xk.zip
           unzip -o xk.zip -d bin
-          # бинарь может лежать в подпапке — найдём и вытащим в bin/
           binpath="$(find bin -type f -iname 'xray-knife*' ! -iname '*.zip' | head -n1)"
-          if [ "$binpath" != "bin/xray-knife" ]; then
-            cp "$binpath" bin/xray-knife
-          fi
+          [ "$binpath" = "bin/xray-knife" ] || cp "$binpath" bin/xray-knife
           chmod +x bin/xray-knife
-          ls -la bin
 
       - name: Add xray-knife to PATH
         run: echo "$PWD/bin" >> "$GITHUB_PATH"
 
-      - name: Verify tool
-        run: |
-          chmod +x bin/xray-knife || true
-          xray-knife --version || xray-knife http --help | head -n 20
+      - name: Fetch source ${{ matrix.source }}
+        run: bash scripts/fetch.sh "https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/main/githubmirror/${{ matrix.source }}.txt"
 
-      - name: Fetch & dedup subscriptions
-        run: bash scripts/fetch.sh
-
-      - name: Filter (Telegram + speed)
+      - name: Filter (Cloudflare + speed)
         run: bash scripts/filter.sh
 
-      - name: Build output
-        run: bash scripts/build_output.sh
+      - name: Upload per-source results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: results-${{ matrix.source }}
+          path: results.csv
+          if-no-files-found: ignore
+          retention-days: 1
+
+  # Слить результаты всех источников, дедуп, отбор, коммит.
+  merge:
+    needs: test
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: proxylist
+          fetch-depth: 0
+
+      - name: Download all per-source results
+        uses: actions/download-artifact@v4
+        with:
+          path: artifacts
+          pattern: results-*
+
+      - name: Merge & build output
+        env:
+          ART_DIR: artifacts
+        run: bash scripts/merge.sh
 
       - name: Commit results
         run: |
@@ -81,5 +103,5 @@ jobs:
             echo "Изменений в output/ нет."
           else
             git commit -m "chore: update filtered list [skip ci]"
-            git push origin "HEAD:${TARGET_BRANCH}"
+            git push origin "HEAD:proxylist"
           fi

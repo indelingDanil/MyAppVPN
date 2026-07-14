@@ -2,6 +2,14 @@
 # Строки, начинающиеся с #, и пустые строки игнорируются.
 # Поддерживается plain-текст (vless:// ... по строкам) и base64-подписки.
 
-# На время тестов — только источник 26 (обход по SNI/CIDR, ~98% Reality,
-# российские SNI типа max.ru/ya.ru). fetch.sh нормализует github.com/raw -> raw.
+# Источники AvenCores/goida-vpn-configs. В workflow каждый тестируется в своём
+# параллельном job (matrix), затем результаты сливаются. fetch.sh принимает один
+# URL аргументом (matrix) либо читает весь этот файл (локальный/одиночный прогон).
+# 26 — РФ-SNI Reality (обход белых списков); 1/6/22..25 — смешанные/зарубежные.
 https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/main/githubmirror/26.txt
+https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/main/githubmirror/1.txt
+https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/main/githubmirror/6.txt
+https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/main/githubmirror/22.txt
+https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/main/githubmirror/23.txt
+https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/main/githubmirror/24.txt
+https://raw.githubusercontent.com/AvenCores/goida-vpn-configs/main/githubmirror/25.txt
