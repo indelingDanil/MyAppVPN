@@ -30,7 +30,7 @@ VPN для Android. Сделан для себя и для людей — что
 
 Спасибо всем, кто пользуется ❤️
 
-**Текущая версия: v2.0.2** — проект живой, фиксы и фичи выходят по мере нахождения проблем.
+**Текущая версия: v2.1.0** — проект живой, фиксы и фичи выходят по мере нахождения проблем.
 
 > ⚠️ **Дисклеймер.** Это **учебный** проект — сделан в образовательных и исследовательских целях.
 > Автор **не несёт ответственности** за то, как вы используете приложение. Помните: в РФ
@@ -59,6 +59,10 @@ VPN для Android. Сделан для себя и для людей — что
 - **Раздельное туннелирование** — выбираете, какие приложения идут мимо VPN (банки, Кинопоиск и т.д., чтобы не тормозили)
 - Статистика трафика в реальном времени (смотреть на неё и чувствовать себя хакером)
 - Работает на мобильном интернете, обходит блокировки операторов
+- **Свои DNS-серверы** — Cloudflare, Google, Quad9, AdGuard, Яндекс или любой свой (DoH / обычный), запросы идут через туннель
+- **«Только выбранные через VPN»** — обратный режим раздельного туннелирования, плюс «Выбрать все / Снять все / Инвертировать»
+- **Раздача через точку доступа** — HTTP-прокси для настроек Wi-Fi и SOCKS5 с паролем для Telegram, с пошаговой инструкцией
+- **Always-on VPN** и автоподключение при загрузке телефона
 
 Минимальная версия Android: 8.0
 
@@ -85,12 +89,12 @@ https://raw.githubusercontent.com/indelingDanil/MyAppVPN/proxylist/output/filter
 Всё просто:
 
 1. Установить APK
-2. Открыть приложение → нажать **Connect**
+2. Открыть приложение → нажать **ПОДКЛЮЧИТЬ**
 3. Готово — приложение само найдёт рабочий сервер (статус «Поиск рабочего сервера…» → «Защищено») и подключится
 
-Хотите выбрать сервер вручную? Вкладка **Servers** → нажмите на нужный. Вернуться к авто — кнопка **⚡ Авто** на главном экране.
+Хотите выбрать сервер вручную? Переключатель **⚡ Авто | 📍 Вручную** на главном экране или вкладка **Серверы** → нажмите на нужный. Переключение идёт на лету, без переподключения.
 
-Если нужно, чтобы какое-то приложение шло напрямую, без VPN: **Settings → Split Tunneling** → выбрать нужное приложение.
+Если нужно, чтобы какое-то приложение шло напрямую, без VPN: **Настройки → Выбор приложений** → отметить нужные (или наоборот — режим «Только выбранные через VPN»).
 
 *(Банк скажет спасибо)*
 
@@ -103,6 +107,7 @@ https://raw.githubusercontent.com/indelingDanil/MyAppVPN/proxylist/output/filter
 - **v1.0.4** — health check через Telegram DC (реальная проверка обхода блокировок), зеркало xync.net для конфигов, раздача VPN через Wi-Fi hotspot (SOCKS5 прокси), фильтрация конфигов Украины
 - **v1.0.5** — большой апдейт безопасности: фикс CVE (утечка IP через локальный SOCKS5 без аутентификации), IPv6-leak, DoH вместо открытого DNS, нейтральные уведомления, рандомизация watchdog-паттернов
 - **v2.0.0** — авто-балансировщик: встроенный балансировщик Xray (observatory) сам выбирает рабочий сервер по реальной проверке Telegram и **бесшовно переключается** при блокировке. Переход на единую подписку zieng2/wl Universal + igareck (5 зеркал с фолбэком, в т.ч. работающие при ограничениях связи). Фильтр стран (РФ исключена по умолчанию). Мгновенный отклик при подключении и честный статус. Переработан UI: одна кнопка, понятные режимы Авто/Ручной. Фикс индикатора трафика
+- **v2.1.0** — большой апдейт. Авто/Ручной переделан: переключение на лету в обе стороны, ручной режим больше не уходит сам на другой (в т.ч. российский) сервер, видно, через какой сервер идёт трафик. **Свои DNS-серверы** (идея от подписчика). Раздельное туннелирование: режим «только выбранные через VPN» и «выбрать все / инвертировать» (тоже идея из GitHub). Раздача через точку доступа переделана и наконец работает по инструкции. Always-on VPN и автозапуск при загрузке. Безопасность: kill switch не освобождает локальный порт, случайные порты на сессию, защита подписок от SSRF. Фиксы: base64-подписки, потерянный порт у серверов `host:port/?…`, один кривой сервер больше не роняет весь авто-режим, кнопка «Главная» в меню. Интерфейс полностью на русском (+ английский), новая вкладка «Поддержать»
 
 ## Важно
 
@@ -142,7 +147,7 @@ If the app has been useful and you'd like to support it, I'll be happy to receiv
 
 Thank you to everyone who uses the app ❤️
 
-**Current version: v2.0.2** — the project is alive, fixes and features are released as issues are discovered.
+**Current version: v2.1.0** — the project is alive, fixes and features are released as issues are discovered.
 
 > ⚠️ **Disclaimer.** This is an **educational** project — made for learning and research purposes.
 > The author **is not responsible** for how you use the application. Remember: in Russia,
@@ -171,6 +176,10 @@ Thank you to everyone who uses the app ❤️
 - **Split tunneling** — choose which apps bypass the VPN (banking apps, streaming services, etc., so they don't slow down)
 - Real-time traffic statistics (staring at them makes you feel like a hacker)
 - Works on mobile data, bypasses carrier blocks
+- **Custom DNS servers** — Cloudflare, Google, Quad9, AdGuard, Yandex or your own (DoH / plain), queries go through the tunnel
+- **"Only selected apps via VPN"** — the inverse split-tunnel mode, plus "Select all / Clear / Invert"
+- **Hotspot sharing** — an HTTP proxy for Wi‑Fi settings and a password-protected SOCKS5 for Telegram, with a step-by-step guide
+- **Always-on VPN** and auto-connect on boot
 
 Minimum Android version: 8.0
 
@@ -197,12 +206,12 @@ Details and disclaimers — in the [proxylist branch README](../../tree/proxylis
 It's simple:
 
 1. Install the APK
-2. Open the app → tap **Connect**
+2. Open the app → tap **CONNECT** (the UI follows your system language: Russian or English)
 3. Done — the app will find a working server on its own (status: "Searching for a working server…" → "Protected") and connect
 
-Want to pick a server manually? Go to the **Servers** tab → tap the one you want. Switch back to auto — hit the **⚡ Auto** button on the main screen.
+Want to pick a server manually? Use the **⚡ Auto | 📍 Manual** switch on the main screen or the **Servers** tab → tap the one you want. Switching happens live, no reconnect.
 
-If you need a specific app to bypass the VPN: **Settings → Split Tunneling** → select the app.
+If you need a specific app to bypass the VPN: **Settings → Choose apps** → tick it (or the other way round — the "Only selected apps via VPN" mode).
 
 *(Your banking app will thank you)*
 
@@ -215,6 +224,7 @@ If you need a specific app to bypass the VPN: **Settings → Split Tunneling** �
 - **v1.0.4** — health check via Telegram DC (real circumvention test), `xync.net` mirror for configs, VPN sharing via Wi‑Fi hotspot (SOCKS5 proxy), filtering of Ukrainian configs
 - **v1.0.5** — major security update: CVE fix (IP leak via local unauthenticated SOCKS5), IPv6-leak fix, DoH instead of plain DNS, neutral notifications, watchdog pattern randomization
 - **v2.0.0** — auto-balancer: built-in Xray balancer (observatory) picks a working server based on real Telegram checks and **seamlessly switches** on block. Migrated to unified subscription `zieng2/wl Universal` + `igareck` (5 mirrors with fallback, including ones that work during connectivity restrictions). Country filter (Russia excluded by default). Instant connection response and honest status. Reworked UI: single button, clear Auto/Manual modes. Fixed traffic indicator
+- **v2.1.0** — big update. Auto/Manual reworked: live switching both ways, manual mode no longer silently jumps to another (possibly Russian) server, you can see which server carries your traffic. **Custom DNS servers** (a follower's idea). Split tunneling: "only selected apps via VPN" mode and "select all / invert" (also a GitHub idea). Hotspot sharing rebuilt and finally works as documented. Always-on VPN and auto-connect on boot. Security: the kill switch keeps the local port bound, random per-session ports, SSRF-hardened subscriptions. Fixes: base64 subscriptions, lost port on `host:port/?…` servers, one broken server no longer takes down the whole Auto mode, the Home tab button. UI fully in Russian (+ English), new "Support" tab
 
 ## Important
 
