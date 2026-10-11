@@ -1,0 +1,14 @@
+{
+  "personal": {
+    "p1": "CHANGE-ME-long-random-token-for-device-1",
+    "p2": "CHANGE-ME-long-random-token-for-device-2"
+  },
+  "demo": {
+    "token": "demo-CHANGE-ME-long-random-token",
+    "max": 8,
+    "seconds": 3600,
+    "userMb": 2048,
+    "dailyMb": 25600,
+    "until": 1792011599
+  }
+}
