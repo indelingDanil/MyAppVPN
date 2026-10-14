@@ -109,3 +109,18 @@ Notes:
   front nginx's 4 KiB buffer flushes promptly.
 - `*.beget.tech` subdomains have no HTTPS (token visible on the path); attach your own domain with
   a free certificate and use `https://`.
+
+## Private stats page
+
+Open `http://your-site/n/?r=stats&k=<admin token>` (add `&format=json` for JSON). Admins are the
+personal token ids listed in `"admin": ["p1"]` in `config.json` (default: `p1`). Any other token —
+including other personal tokens and the demo token — gets the same `404 no` as a wrong token.
+
+The page shows counts only (no tokens, no install ids, no destinations): open sessions per
+personal token, last activity, traffic today / 7 days, total sessions; for the demo — slots in use,
+devices in their trial now, trials started today / total, demo traffic today vs the daily cap.
+The URL contains your token: don't share it.
+
+Страница статистики: `http://ваш-сайт/n/?r=stats&k=<ваш токен>` — только для токенов из `admin`
+(по умолчанию `p1`), остальным — `404 no`. Только цифры, без токенов и адресов. Ссылку не передавайте:
+в ней ваш токен.

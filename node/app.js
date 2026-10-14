@@ -90,7 +90,11 @@ function compileConfig(j) {
     };
     tokens.set(sha(d.token), { kind: 'demo', id: 'demo', key: 'demo' });
   }
-  return { tokens, demo };
+  // Admins may open the private stats page (?r=stats). Default: the personal token "p1".
+  const adminIds = Array.isArray(j && j.admin) ? j.admin.map(String) : ['p1'];
+  for (const r of tokens.values()) if (r.kind === 'personal' && adminIds.includes(r.id)) r.admin = true;
+  const personalIds = j && typeof j.personal === 'object' && j.personal ? Object.keys(j.personal) : [];
+  return { tokens, demo, personalIds };
 }
 
 function loadConfig(force) {
@@ -119,20 +123,32 @@ function roleFor(k) {
 
 // ── persistent demo counters ─────────────────────────────────────────────────
 
-const state = { trial: {}, bytes: {}, days: {} };
+// personal: roleKey -> { first, last, sessions, days: { 'YYYY-MM-DD': bytes } } (owner stats only)
+const state = { trial: {}, bytes: {}, days: {}, personal: {} };
+const startedAt = Date.now();
 let saveTimer = null;
 
 function loadState() {
   try { fs.mkdirSync(DATA_DIR, { recursive: true }); } catch (e) { log('state: cannot create data dir:', e.code); }
   try {
     const j = JSON.parse(fs.readFileSync(STATE_PATH, 'utf8'));
-    for (const k of ['trial', 'bytes', 'days']) if (j && typeof j[k] === 'object' && j[k]) state[k] = j[k];
+    for (const k of ['trial', 'bytes', 'days', 'personal']) if (j && typeof j[k] === 'object' && j[k]) state[k] = j[k];
   } catch (e) { if (e.code !== 'ENOENT') log('state: unreadable state.json, starting empty'); }
 }
 
 function pruneDays() {
   const keep = new Date(Date.now() - 8 * 86400000).toISOString().slice(0, 10);
   for (const d of Object.keys(state.days)) if (d < keep) delete state.days[d];
+  for (const p of Object.values(state.personal)) {
+    if (p && p.days) for (const d of Object.keys(p.days)) if (d < keep) delete p.days[d];
+  }
+}
+
+function personalRec(key) {
+  let p = state.personal[key];
+  if (!p || typeof p !== 'object') p = state.personal[key] = { first: nowSec(), last: 0, sessions: 0, days: {} };
+  if (!p.days) p.days = {};
+  return p;
 }
 
 function saveStateSync() {
@@ -478,7 +494,15 @@ class Session {
 }
 
 function account(sess, n) {
-  if (!sess.demo) return;
+  if (!sess.demo) {
+    // Personal tokens: owner-only usage stats (no limits).
+    const p = personalRec(sess.roleKey);
+    const day = today();
+    p.days[day] = (p.days[day] || 0) + n;
+    p.last = nowSec();
+    scheduleSave();
+    return;
+  }
   state.bytes[sess.ukey] = (state.bytes[sess.ukey] || 0) + n;
   const day = today();
   state.days[day] = (state.days[day] || 0) + n;
@@ -553,6 +577,12 @@ function handleDown(req, res, q, role, s) {
     tombstones.delete(s);
     sess = new Session(s, role, ukey);
     sessions.set(s, sess);
+    if (role.kind === 'personal') {
+      const p = personalRec(role.key);
+      p.sessions = (p.sessions || 0) + 1;
+      p.last = nowSec();
+      scheduleSave();
+    }
     log(`session ${sid6(s)} created (${role.kind === 'demo' ? 'demo' : 'personal ' + role.id})`);
   } else if (sess.demo) {
     const r = demoLimitReason(sess.ukey);
@@ -646,6 +676,95 @@ function handleUp(req, res, q, role, s) {
   });
 }
 
+// ── private stats (admin token only) ─────────────────────────────────────────
+// Shows counts only: no tokens, no install ids, no destinations.
+
+function statsData() {
+  const now = nowSec();
+  const day = today();
+  const week = (days) => Object.values(days || {}).reduce((a, b) => a + b, 0);
+  const live = {};
+  let demoLive = 0;
+  for (const s of sessions.values()) {
+    if (s.demo) demoLive++;
+    else live[s.roleKey] = (live[s.roleKey] || 0) + 1;
+  }
+  const ids = new Set([...(cfg.personalIds || [])]);
+  for (const k of Object.keys(state.personal)) if (k.startsWith('p:')) ids.add(k.slice(2));
+  const personal = [...ids].sort().map((id) => {
+    const key = 'p:' + id;
+    const p = state.personal[key] || {};
+    return {
+      id,
+      active: (cfg.personalIds || []).includes(id),
+      liveSessions: live[key] || 0,
+      lastSeen: p.last || 0,
+      firstSeen: p.first || 0,
+      sessionsTotal: p.sessions || 0,
+      bytesToday: (p.days && p.days[day]) || 0,
+      bytesWeek: week(p.days),
+    };
+  });
+  const d = cfg.demo;
+  const trials = Object.values(state.trial);
+  const todayStart = Math.floor(Date.parse(day + 'T00:00:00Z') / 1000);
+  return {
+    now, uptimeSec: Math.floor((Date.now() - startedAt) / 1000),
+    sessionsTotal: sessions.size,
+    personal,
+    demo: d ? {
+      liveSessions: demoLive, max: d.max,
+      triedTotal: trials.length,
+      triedToday: trials.filter((t) => t >= todayStart).length,
+      inTrialNow: trials.filter((t) => now - t < d.seconds).length,
+      bytesToday: state.days[day] || 0, dailyLimitBytes: d.dailyMb * MiB,
+      until: d.until,
+    } : null,
+  };
+}
+
+function handleStats(res, asJson) {
+  const s = statsData();
+  if (asJson) return send(res, 200, JSON.stringify(s), { 'Content-Type': 'application/json; charset=utf-8' });
+  const esc = (v) => String(v).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const mb = (b) => (b / MiB).toFixed(b < 10 * MiB ? 1 : 0) + ' МБ';
+  const msk = (t) => t ? new Date(t * 1000).toLocaleString('ru-RU', { timeZone: 'Europe/Moscow' }) : '—';
+  const ago = (t) => {
+    if (!t) return 'никогда';
+    const d = s.now - t;
+    if (d < 90) return 'только что';
+    if (d < 3600) return Math.round(d / 60) + ' мин назад';
+    if (d < 86400) return Math.round(d / 3600) + ' ч назад';
+    return Math.round(d / 86400) + ' дн назад';
+  };
+  const rows = s.personal.map((p) => `<tr${p.active ? '' : ' class="off"'}><td>${esc(p.id)}${p.active ? '' : ' (выкл.)'}</td>` +
+    `<td class="n">${p.liveSessions ? '<b>' + p.liveSessions + '</b>' : '0'}</td><td>${ago(p.lastSeen)}</td>` +
+    `<td class="n">${mb(p.bytesToday)}</td><td class="n">${mb(p.bytesWeek)}</td><td class="n">${p.sessionsTotal}</td></tr>`).join('');
+  const d = s.demo;
+  const demoBlock = d ? `<h2>Демо</h2><table>
+<tr><td>Занято мест сейчас</td><td class="n"><b>${d.liveSessions}</b> из ${d.max}</td></tr>
+<tr><td>Устройств в пробном часе</td><td class="n">${d.inTrialNow}</td></tr>
+<tr><td>Начали пробу сегодня (UTC)</td><td class="n">${d.triedToday}</td></tr>
+<tr><td>Всего устройств пробовало</td><td class="n">${d.triedTotal}</td></tr>
+<tr><td>Трафик демо сегодня</td><td class="n">${mb(d.bytesToday)} из ${mb(d.dailyLimitBytes)}</td></tr>
+<tr><td>Демо работает до</td><td class="n">${d.until ? msk(d.until) : 'без срока'}</td></tr></table>` : '<h2>Демо</h2><p>выключено</p>';
+  const html = `<!doctype html><html lang="ru"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1"><meta http-equiv="refresh" content="30">
+<meta name="robots" content="noindex,nofollow"><title>OpenFlux · статистика</title>
+<style>body{font:15px/1.45 system-ui,sans-serif;margin:0;padding:16px;background:#0b1220;color:#e5e7eb}
+h1{font-size:20px;margin:0 0 4px}h2{font-size:16px;margin:22px 0 8px;color:#22d3ee}.sub{color:#94a3b8;font-size:13px}
+table{border-collapse:collapse;width:100%;max-width:720px}td,th{padding:7px 8px;border-bottom:1px solid #1f2a3d;text-align:left}
+th{color:#94a3b8;font-weight:500;font-size:13px}.n{text-align:right;font-variant-numeric:tabular-nums}.off td{color:#64748b}
+.wrap{overflow-x:auto}</style></head><body>
+<h1>OpenFlux · статистика</h1>
+<div class="sub">${msk(s.now)} МСК · сервер работает ${Math.floor(s.uptimeSec / 3600)} ч ${Math.floor(s.uptimeSec % 3600 / 60)} мин · всего сессий сейчас: ${s.sessionsTotal} · обновляется каждые 30 с</div>
+<h2>Личные токены</h2><div class="wrap"><table><tr><th>Токен</th><th class="n">Сессий сейчас</th><th>Активность</th><th class="n">Сегодня</th><th class="n">7 дней</th><th class="n">Подключений всего</th></tr>${rows || '<tr><td colspan="6">нет</td></tr>'}</table></div>
+${demoBlock}
+<p class="sub">«Сессий сейчас» — открытые подключения; сессия живёт ещё ~1 мин после отключения. Учёт по личным токенам ведётся с момента обновления сервера.</p>
+</body></html>`;
+  return send(res, 200, html, { 'Content-Type': 'text/html; charset=utf-8', 'X-Robots-Tag': 'noindex' });
+}
+
 function onRequest(req, res) {
   res.setHeader('X-OF-Proto', '2');
   req.on('error', () => {});
@@ -657,6 +776,11 @@ function onRequest(req, res) {
   } catch { return send(res, 400, 'bad'); }
   const role = roleFor(q.get('k'));
   if (!role) { req.resume(); return send(res, 404, 'no'); }
+  if (q.get('r') === 'stats') {
+    req.resume();
+    if (!role.admin) return send(res, 404, 'no');      // indistinguishable from a bad token
+    return handleStats(res, q.get('format') === 'json');
+  }
   const s = q.get('s') || '';
   if (!S_RE.test(s)) { req.resume(); return send(res, 400, 'bad session'); }
   const r = q.get('r');
