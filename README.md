@@ -30,7 +30,7 @@ VPN для Android. Сделан для себя и для людей — что
 
 Спасибо всем, кто пользуется ❤️
 
-**Текущая версия: v2.1.0** — проект живой, фиксы и фичи выходят по мере нахождения проблем.
+**Текущая версия: v2.1.2** — проект живой, фиксы и фичи выходят по мере нахождения проблем.
 
 > ⚠️ **Дисклеймер.** Это **учебный** проект — сделан в образовательных и исследовательских целях.
 > Автор **не несёт ответственности** за то, как вы используете приложение. Помните: в РФ
@@ -47,7 +47,9 @@ VPN для Android. Сделан для себя и для людей — что
 
 **Установка:** скачать APK → при запросе разрешить установку из неизвестных источников (это стандартная процедура для любого APK не из Play Store, всё окей) → установить → наслаждаться интернетом.
 
-> Требуется 64-битное устройство (arm64) с Android 8.0 или новее.
+**Какой файл качать** (Android 8.0 или новее):
+- `my-app-vpn-…-arm64.apk` — для большинства телефонов;
+- `my-app-vpn-…-arm32.apk` — для 32-битного Android (бюджетные и старые модели, например Samsung Galaxy A01 / A10 / A20 / A30, серии J и M). Если arm64 пишет «Приложение не установлено» — берите эту.
 
 ## Что умеет
 
@@ -63,26 +65,35 @@ VPN для Android. Сделан для себя и для людей — что
 - **«Только выбранные через VPN»** — обратный режим раздельного туннелирования, плюс «Выбрать все / Снять все / Инвертировать»
 - **Раздача через точку доступа** — HTTP-прокси для настроек Wi-Fi и SOCKS5 с паролем для Telegram, с пошаговой инструкцией
 - **Always-on VPN** и автоподключение при загрузке телефона
+- **Своя подписка «MyAppVPN (авто-сбор)»** — бот сам находит и чистит публичные списки серверов (подробнее ниже)
+- **Новый дизайн** со «стеклянными» элементами и **светлая тема** (Настройки → Оформление)
+- **OpenFlux (Beta)** — свой выход на обычном веб-хостинге, когда обычные серверы не проходят
 
-Минимальная версия Android: 8.0
+Минимальная версия Android: 8.0 (сборки для 64- и 32-битных телефонов)
 
 ## Как это вообще работает
 
 В России операторы применяют так называемые белые списки — пропускают только «разрешённые» адреса, всё остальное режут. Приложение использует актуальные VLESS-серверы, которые работают через эти ограничения как отмычка: трафик идёт туда, куда нужно вам, а не туда, куда разрешил оператор.
 
-Серверы берутся из открытых источников (**[zieng2/wl](https://github.com/zieng2/wl)** Universal + **[igareck](https://github.com/igareck/vpn-configs-for-russia)**) и обновляются каждый час — чтобы отмычка не затупилась. А чтобы выбрать действительно рабочий сервер, приложение проверяет каждый по реальной доступности Telegram: простого пинга недостаточно — сервер может «пинговаться», но трафик не пропускать.
+Серверы берутся из открытых источников (**[zieng2/wl](https://github.com/zieng2/wl)** Universal + **[igareck](https://github.com/igareck/vpn-configs-for-russia)** + наша собственная подписка **[MyAppVPN-subs](https://github.com/indelingDanil/MyAppVPN-subs)**) и обновляются каждый час — чтобы отмычка не затупилась. А чтобы выбрать действительно рабочий сервер, приложение проверяет каждый по реальной доступности Telegram: простого пинга недостаточно — сервер может «пинговаться», но трафик не пропускать.
 
-## 🧪 Бета: авто-фильтр прокси-листа
+## 📡 Своя подписка: MyAppVPN-subs
 
-Экспериментальное дополнение (ветка [`proxylist`](../../tree/proxylist)): GitHub Actions раз в час отбирает публичные подписки и оставляет только те **VLESS**-серверы, через которые реально открывается Telegram и которые проходят грубый порог скорости (≥ 1 МБ/с). Обновляется автоматически.
+Отдельный репозиторий **[MyAppVPN-subs](https://github.com/indelingDanil/MyAppVPN-subs)** — бот на GitHub Actions, который сам:
+- **находит** публичные VLESS-подписки на GitHub (раз в неделю);
+- **выкидывает** удалённые источники (404) и те, что **не обновлялись больше недели**;
+- раз в 3 часа **собирает** серверы, убирает дубли, проверяет, что они живые, и оставляет только защищённые (Reality / TLS);
+- **публикует** очищенный список с флагом страны у каждого сервера.
 
-Готовый plain-список для подписки в приложении:
+В приложении (с v2.1.2) она уже встроена как «**MyAppVPN (авто-сбор)**» — ничего настраивать не нужно, отключается в Настройки → Подписки. Ссылка для других клиентов (v2rayNG, Hiddify и т.п.):
 
 ```
-https://raw.githubusercontent.com/indelingDanil/MyAppVPN/proxylist/output/filtered.txt
+https://cdn.jsdelivr.net/gh/indelingDanil/MyAppVPN-subs@output/vless.txt
 ```
 
-Подробности и оговорки — в [README ветки proxylist](../../tree/proxylist#readme). ⚠️ Это бета: список и формат могут меняться.
+Запасные зеркала, списки по странам и статистика — в [README репозитория](https://github.com/indelingDanil/MyAppVPN-subs#readme). ⚠️ Бесплатные серверы держат неизвестные люди — не передавайте через них ничего ценного.
+
+> Старый бета-фильтр из ветки `proxylist` отключён: его источник удалили, а новый бот делает то же самое лучше и сам находит источники.
 
 ## Как пользоваться
 
@@ -109,6 +120,7 @@ https://raw.githubusercontent.com/indelingDanil/MyAppVPN/proxylist/output/filter
 - **v2.0.0** — авто-балансировщик: встроенный балансировщик Xray (observatory) сам выбирает рабочий сервер по реальной проверке Telegram и **бесшовно переключается** при блокировке. Переход на единую подписку zieng2/wl Universal + igareck (5 зеркал с фолбэком, в т.ч. работающие при ограничениях связи). Фильтр стран (РФ исключена по умолчанию). Мгновенный отклик при подключении и честный статус. Переработан UI: одна кнопка, понятные режимы Авто/Ручной. Фикс индикатора трафика
 - **v2.1.0** — большой апдейт. Авто/Ручной переделан: переключение на лету в обе стороны, ручной режим больше не уходит сам на другой (в т.ч. российский) сервер, видно, через какой сервер идёт трафик. **Свои DNS-серверы** (идея от подписчика). Раздельное туннелирование: режим «только выбранные через VPN» и «выбрать все / инвертировать» (тоже идея из GitHub). Раздача через точку доступа переделана и наконец работает по инструкции. Always-on VPN и автозапуск при загрузке. Безопасность: kill switch не освобождает локальный порт, случайные порты на сессию, защита подписок от SSRF. Фиксы: base64-подписки, потерянный порт у серверов `host:port/?…`, один кривой сервер больше не роняет весь авто-режим, кнопка «Главная» в меню. Интерфейс полностью на русском (+ английский), новая вкладка «Поддержать»
 - **v2.1.1-beta** (пререлиз) — экспериментальный режим **OpenFlux**: свой выход на обычном веб-хостинге вместо VLESS-серверов, сессии переживают обрывы. Демо-сервер для пробы (1 час или 2 ГБ разово, 8 мест), инструкция для своего выхода — ветка [`openflux-exit`](../../tree/openflux-exit)
+- **v2.1.2** — **новый дизайн**: спокойная палитра с одним синим акцентом вместо неона, «стеклянная» плавающая нижняя панель, новая кнопка подключения, **светлая тема**. **Поддержка 32-битного Android** (отдельный APK arm32 — по просьбе подписчика). APK почти вдвое меньше (~53 МБ вместо ~95). **Своя подписка** [MyAppVPN-subs](https://github.com/indelingDanil/MyAppVPN-subs) с ботом, который сам находит и чистит источники. OpenFlux: режим коротких запросов для «тормозящих» операторов, запасной адрес сервера и кнопка «Диагностика подключения»
 
 ## Важно
 
@@ -148,7 +160,7 @@ If the app has been useful and you'd like to support it, I'll be happy to receiv
 
 Thank you to everyone who uses the app ❤️
 
-**Current version: v2.1.0** — the project is alive, fixes and features are released as issues are discovered.
+**Current version: v2.1.2** — the project is alive, fixes and features are released as issues are discovered.
 
 > ⚠️ **Disclaimer.** This is an **educational** project — made for learning and research purposes.
 > The author **is not responsible** for how you use the application. Remember: in Russia,
@@ -165,7 +177,9 @@ Thank you to everyone who uses the app ❤️
 
 **Installation:** download the APK → when prompted, allow installation from unknown sources (this is standard for any APK not from the Play Store, nothing to worry about) → install → enjoy the internet.
 
-> Requires a 64-bit device (arm64) with Android 8.0 or newer.
+**Which file** (Android 8.0 or newer):
+- `my-app-vpn-…-arm64.apk` — for most phones;
+- `my-app-vpn-…-arm32.apk` — for 32-bit Android (budget/older devices, e.g. Samsung Galaxy A01 / A10 / A20 / A30, J and M series). Use it if the arm64 build says "App not installed".
 
 ## Features
 
@@ -181,26 +195,31 @@ Thank you to everyone who uses the app ❤️
 - **"Only selected apps via VPN"** — the inverse split-tunnel mode, plus "Select all / Clear / Invert"
 - **Hotspot sharing** — an HTTP proxy for Wi‑Fi settings and a password-protected SOCKS5 for Telegram, with a step-by-step guide
 - **Always-on VPN** and auto-connect on boot
+- **Our own "MyAppVPN (auto-collected)" subscription** — a bot finds and cleans public server lists (see below)
+- **New design** with glass elements and a **light theme** (Settings → Appearance)
+- **OpenFlux (Beta)** — your own exit on ordinary web hosting when regular servers don't get through
 
-Minimum Android version: 8.0
+Minimum Android version: 8.0 (builds for 64-bit and 32-bit phones)
 
 ## How it works
 
 In Russia, carriers use so-called whitelists — they only pass "approved" addresses and cut everything else. The app uses up-to-date VLESS servers that work through these restrictions like a picklock: traffic goes where *you* want, not where the carrier allows.
 
-Servers are sourced from public repositories (**[zieng2/wl](https://github.com/zieng2/wl)** Universal + **[igareck](https://github.com/igareck/vpn-configs-for-russia)**) and refreshed every hour — so the picklock doesn't get dull. To pick a truly working server, the app checks each one against real Telegram reachability: a simple ping isn't enough — a server can respond to pings but still not pass traffic.
+Servers are sourced from public repositories (**[zieng2/wl](https://github.com/zieng2/wl)** Universal + **[igareck](https://github.com/igareck/vpn-configs-for-russia)** + our own **[MyAppVPN-subs](https://github.com/indelingDanil/MyAppVPN-subs)**) and refreshed every hour — so the picklock doesn't get dull. To pick a truly working server, the app checks each one against real Telegram reachability: a simple ping isn't enough — a server can respond to pings but still not pass traffic.
 
-## 🧪 Beta: proxy-list auto-filter
+## 📡 Our own subscription: MyAppVPN-subs
 
-An experimental companion (the [`proxylist`](../../tree/proxylist) branch): an hourly GitHub Action filters public subscriptions and keeps only the **VLESS** servers that actually reach Telegram through the proxy and pass a rough speed gate (≥ 1 MB/s). Updates automatically.
+A separate repo, **[MyAppVPN-subs](https://github.com/indelingDanil/MyAppVPN-subs)**: a GitHub Actions bot that **discovers** public VLESS subscriptions on GitHub (weekly), **drops** deleted (404) sources and ones **not updated for over a week**, **collects** servers every 3 hours, dedupes them, checks they're alive, keeps only Reality / TLS, and **publishes** a cleaned list with a country flag on each server.
 
-Ready-made plain list to subscribe in the app:
+Since v2.1.2 it's built into the app as "**MyAppVPN (auto-collected)**" — nothing to set up; disable it in Settings → Subscriptions. Link for other clients (v2rayNG, Hiddify, etc.):
 
 ```
-https://raw.githubusercontent.com/indelingDanil/MyAppVPN/proxylist/output/filtered.txt
+https://cdn.jsdelivr.net/gh/indelingDanil/MyAppVPN-subs@output/vless.txt
 ```
 
-Details and disclaimers — in the [proxylist branch README](../../tree/proxylist#readme). ⚠️ This is beta: the list and format may change.
+Mirrors, per-country lists and stats — in the [repo README](https://github.com/indelingDanil/MyAppVPN-subs#readme). ⚠️ Free servers are run by unknown people — don't send anything valuable through them.
+
+> The old beta filter on the `proxylist` branch is disabled: its source was deleted, and the new bot does the same job better and finds sources on its own.
 
 ## How to use
 
@@ -227,6 +246,7 @@ If you need a specific app to bypass the VPN: **Settings → Choose apps** → t
 - **v2.0.0** — auto-balancer: built-in Xray balancer (observatory) picks a working server based on real Telegram checks and **seamlessly switches** on block. Migrated to unified subscription `zieng2/wl Universal` + `igareck` (5 mirrors with fallback, including ones that work during connectivity restrictions). Country filter (Russia excluded by default). Instant connection response and honest status. Reworked UI: single button, clear Auto/Manual modes. Fixed traffic indicator
 - **v2.1.0** — big update. Auto/Manual reworked: live switching both ways, manual mode no longer silently jumps to another (possibly Russian) server, you can see which server carries your traffic. **Custom DNS servers** (a follower's idea). Split tunneling: "only selected apps via VPN" mode and "select all / invert" (also a GitHub idea). Hotspot sharing rebuilt and finally works as documented. Always-on VPN and auto-connect on boot. Security: the kill switch keeps the local port bound, random per-session ports, SSRF-hardened subscriptions. Fixes: base64 subscriptions, lost port on `host:port/?…` servers, one broken server no longer takes down the whole Auto mode, the Home tab button. UI fully in Russian (+ English), new "Support" tab
 - **v2.1.1-beta** (pre-release) — experimental **OpenFlux** mode: your own exit on ordinary web hosting instead of VLESS servers, sessions survive cuts. A demo server to try it (1 hour or 2 GB once, 8 slots); guide for your own exit — the [`openflux-exit`](../../tree/openflux-exit) branch
+- **v2.1.2** — **new design**: a calm palette with a single blue accent instead of neon, a floating glass bottom bar, a new connect button, **light theme**. **32-bit Android support** (a separate arm32 APK, requested by a follower). The APK is almost half the size (~53 MB instead of ~95). **Our own subscription** [MyAppVPN-subs](https://github.com/indelingDanil/MyAppVPN-subs) with a bot that finds and cleans sources itself. OpenFlux: short-request mode for carriers that stall long responses, a fallback server address and a "Connection diagnostics" button
 
 ## Important
 
