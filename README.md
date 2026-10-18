@@ -8,7 +8,7 @@
 приложение → Xray → помощник OpenFlux (на телефоне) → http(s)://ваш-сайт/n/ → интернет
 ```
 
-Когда полезно: мобильный оператор пропускает только «белые» сайты, а ваш хостинг (например, российский Beget) в этот список попадает. Выход на хостинге сам ходит в Telegram, YouTube и т.д.
+Когда полезно: мобильный оператор пропускает только «белые» сайты, а ваш хостинг (например, российский [Beget](https://beget.com/p1444343)) в этот список попадает. Выход на хостинге сам ходит в Telegram, YouTube и т.д.
 
 > ⚠️ **Дисклеймер.** Учебный проект. Автор не несёт ответственности за использование. В РФ VPN-сервисы для обхода блокировок ограничены законом. Используя хостинг как прокси, вы можете нарушить его правила — читайте условия хостера. На свой страх и риск.
 
@@ -26,7 +26,7 @@
 
 Beget официально запускает Node-приложения на виртуальном хостинге через Passenger — [их инструкция](https://beget.com/ru/kb/how-to/web-apps/node-js). Ниже — она же, применительно к выходу.
 
-1. **Сайт.** Панель Beget → «Сайты» → добавьте сайт (подойдёт бесплатный поддомен `имя.логин.beget.tech`).
+1. **Сайт.** Зарегистрируйтесь на [Beget](https://beget.com/p1444343) (тариф облачного хостинга, есть бесплатный пробный период). Панель Beget → «Сайты» → добавьте сайт (подойдёт бесплатный поддомен `имя.логин.beget.tech`).
 2. **SSH.** Подключитесь к аккаунту (`ssh логин@логин.beget.tech`, пароль из панели) и войдите в Docker-окружение, где работает Node:
    ```sh
    ssh localhost -p 222
@@ -78,7 +78,7 @@ Beget официально запускает Node-приложения на в�
 
 > ⚠️ **Disclaimer.** Educational project. The author is not responsible for how you use it. In Russia, VPN services for bypassing blocks are restricted by law. Using a host as a proxy may violate its terms. Use at your own risk.
 
-**Recommended: Node.js exit (`node/`)** — sessions resume after the host cuts a request, so video/downloads/calls don't break. On Beget (tested): create a site → SSH in and `ssh localhost -p 222` → make sure Node 20 is in `~/.local` ([Beget guide](https://beget.com/ru/kb/how-to/web-apps/node-js)) → create `<site>/ofnode/{bin,tmp,data}` **outside** `public_html`, copy `~/.local/bin/node` to `ofnode/bin/node` → put `app.js` and `config.json` (from `config.example.json`, your own long random tokens) there → create `public_html/n/.htaccess` with `PassengerNodejs`, `PassengerAppRoot`, `PassengerAppType node`, `PassengerStartupFile app.js`, `PassengerBaseURI /n` → `touch ofnode/tmp/restart.txt` → `http://your-site/n/?k=wrong&s=abcdefgh&r=down&from=0` should print `no` → in the app: OpenFlux (Beta) → URL `http://your-site/n/` + token → Save → enable → Connect.
+**Recommended: Node.js exit (`node/`)** — sessions resume after the host cuts a request, so video/downloads/calls don't break. On [Beget](https://beget.com/p1444343) (tested): create a site → SSH in and `ssh localhost -p 222` → make sure Node 20 is in `~/.local` ([Beget guide](https://beget.com/ru/kb/how-to/web-apps/node-js)) → create `<site>/ofnode/{bin,tmp,data}` **outside** `public_html`, copy `~/.local/bin/node` to `ofnode/bin/node` → put `app.js` and `config.json` (from `config.example.json`, your own long random tokens) there → create `public_html/n/.htaccess` with `PassengerNodejs`, `PassengerAppRoot`, `PassengerAppType node`, `PassengerStartupFile app.js`, `PassengerBaseURI /n` → `touch ofnode/tmp/restart.txt` → `http://your-site/n/?k=wrong&s=abcdefgh&r=down&from=0` should print `no` → in the app: OpenFlux (Beta) → URL `http://your-site/n/` + token → Save → enable → Connect.
 
 **Alternative: PHP exit (`php/`)** — FTP only, simpler, but sessions break whenever the host cuts a request. See `php/README.md`.
 

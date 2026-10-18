@@ -64,6 +64,8 @@ Optional env: `OF_CONFIG` (config path), `OF_DATA_DIR`, `OF_RETAIN_CAP` (bytes, 
 
 ## Deploy on Beget (Phusion Passenger)
 
+Hosting: [Beget](https://beget.com/p1444343) cloud hosting (free trial available).
+
 Passenger starts `app.js` itself and hooks `http.createServer().listen()`, so `PORT` doesn't matter
 there. Requests arrive with the base path (`/n/`); the app routes by the query string only.
 

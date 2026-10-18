@@ -8,7 +8,7 @@
 приложение → tun2socks → Xray → помощник OpenFlux (на телефоне) → http(s)://ваш-хостинг/phpbox.php → интернет
 ```
 
-Когда это полезно: мобильный оператор пропускает только «белые» сайты, а ваш хостинг (например, российский Beget) в этот список попадает. Скрипт на хостинге уже сам ходит в Telegram, YouTube и т.д.
+Когда это полезно: мобильный оператор пропускает только «белые» сайты, а ваш хостинг (например, российский [Beget](https://beget.com/p1444343)) в этот список попадает. Скрипт на хостинге уже сам ходит в Telegram, YouTube и т.д.
 
 Ограничения режима: только TCP на порты 80/443 (DNS идёт через DoH автоматически), скорость скромная — от нескольких до ~15 Мбит/с в зависимости от хостинга, сессия переподключается раз в ~2 минуты (приложение делает это само).
 
@@ -21,7 +21,7 @@
 
 ## Пошагово на Beget
 
-1. **Зарегистрируйтесь** на beget.com и выберите тариф **облачного хостинга** (есть бесплатный пробный период).
+1. **Зарегистрируйтесь** на [beget.com](https://beget.com/p1444343) и выберите тариф **облачного хостинга** (есть бесплатный пробный период).
 2. **Создайте сайт.** Панель → «Сайты» → «Добавить сайт». Можно взять бесплатный технический поддомен вида `имя.ваш-логин.beget.tech`.
 3. **Создайте FTP-доступ** к этому сайту: Панель → «FTP» → «Добавить», папка — корень сайта. Запишите логин и пароль.
 4. **Скачайте файлы** из этой папки репозитория: `phpbox.php` и `config.example.php`.
@@ -53,7 +53,7 @@
 
 > ⚠️ **Disclaimer.** Educational project. The author is not responsible for how you use it. In Russia, VPN services for bypassing blocks are restricted by law. Using a host as a proxy may violate its terms. Use at your own risk.
 
-**Steps (Beget, tested):** create a cloud-hosting site (a free `*.beget.tech` subdomain works) → create FTP access to the site → rename `config.example.php` to `config.php`, set a long random `PHPBOX_TOKEN` and uncomment `PHPBOX_BUS` pointing to a folder **outside** `public_html` (Beget gives each PHP request a private `/tmp`) → upload `phpbox.php` + `config.php` to `public_html` → opening `http://your-site/phpbox.php` should print `no` → in the app: Settings → Experiments → OpenFlux (Beta) → paste the URL and token → Save → enable → Connect.
+**Steps ([Beget](https://beget.com/p1444343), tested):** create a cloud-hosting site (a free `*.beget.tech` subdomain works) → create FTP access to the site → rename `config.example.php` to `config.php`, set a long random `PHPBOX_TOKEN` and uncomment `PHPBOX_BUS` pointing to a folder **outside** `public_html` (Beget gives each PHP request a private `/tmp`) → upload `phpbox.php` + `config.php` to `public_html` → opening `http://your-site/phpbox.php` should print `no` → in the app: Settings → Experiments → OpenFlux (Beta) → paste the URL and token → Save → enable → Connect.
 
 **Notes:** `*.beget.tech` subdomains have no HTTPS (the token and site names are visible on the path; HTTPS content stays encrypted) — attach your own domain with a free SSL certificate to use `https://`. Keep the token private. Each connection holds one PHP process; ~10 concurrent users is comfortable on cloud hosting.
 
