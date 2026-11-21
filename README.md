@@ -10,7 +10,7 @@
 
 VPN для Android. Сделан для себя и для людей — чтобы просто работало, а не чтобы продаться стартапу через год.
 
-Более 4 000+ скачиваний за время жизни проекта (можете убедиться через релизноуты по версиям).
+Уже более 30 000 скачиваний за время жизни проекта (счётчики видны в релизах по версиям).
 
 Если нравиться приложение поставьте "STAR"❤️
 
@@ -30,7 +30,7 @@ VPN для Android. Сделан для себя и для людей — что
 
 Спасибо всем, кто пользуется ❤️
 
-**Текущая версия: v2.1.2** — проект живой, фиксы и фичи выходят по мере нахождения проблем.
+**Текущая версия: v2.2.0** — проект живой, фиксы и фичи выходят по мере нахождения проблем.
 
 > ⚠️ **Дисклеймер.** Это **учебный** проект — сделан в образовательных и исследовательских целях.
 > Автор **не несёт ответственности** за то, как вы используете приложение. Помните: в РФ
@@ -50,6 +50,16 @@ VPN для Android. Сделан для себя и для людей — что
 **Какой файл качать** (Android 8.0 или новее):
 - `my-app-vpn-…-arm64.apk` — для большинства телефонов;
 - `my-app-vpn-…-arm32.apk` — для 32-битного Android (бюджетные и старые модели, например Samsung Galaxy A01 / A10 / A20 / A30, серии J и M). Если arm64 пишет «Приложение не установлено» — берите эту.
+
+## Скриншоты
+
+<p align="center">
+  <img src="docs/screenshots/home-dark.png" width="200" alt="Главная">
+  <img src="docs/screenshots/servers.png" width="200" alt="Серверы">
+  <img src="docs/screenshots/settings.png" width="200" alt="Настройки">
+  <img src="docs/screenshots/stats.png" width="200" alt="Статистика">
+  <img src="docs/screenshots/home-light.png" width="200" alt="Светлая тема">
+</p>
 
 ## Что умеет
 
@@ -121,6 +131,11 @@ https://cdn.jsdelivr.net/gh/indelingDanil/MyAppVPN-subs@output/vless.txt
 - **v2.1.0** — большой апдейт. Авто/Ручной переделан: переключение на лету в обе стороны, ручной режим больше не уходит сам на другой (в т.ч. российский) сервер, видно, через какой сервер идёт трафик. **Свои DNS-серверы** (идея от подписчика). Раздельное туннелирование: режим «только выбранные через VPN» и «выбрать все / инвертировать» (тоже идея из GitHub). Раздача через точку доступа переделана и наконец работает по инструкции. Always-on VPN и автозапуск при загрузке. Безопасность: kill switch не освобождает локальный порт, случайные порты на сессию, защита подписок от SSRF. Фиксы: base64-подписки, потерянный порт у серверов `host:port/?…`, один кривой сервер больше не роняет весь авто-режим, кнопка «Главная» в меню. Интерфейс полностью на русском (+ английский), новая вкладка «Поддержать»
 - **v2.1.1-beta** (пререлиз) — экспериментальный режим **OpenFlux**: свой выход на обычном веб-хостинге вместо VLESS-серверов, сессии переживают обрывы. Демо-сервер для пробы (1 час или 2 ГБ разово, 8 мест), инструкция для своего выхода — ветка [`openflux-exit`](../../tree/openflux-exit)
 - **v2.1.2** — **новый дизайн**: спокойная палитра с одним синим акцентом вместо неона, «стеклянная» плавающая нижняя панель, новая кнопка подключения, **светлая тема**. **Поддержка 32-битного Android** (отдельный APK arm32 — по просьбе подписчика). APK почти вдвое меньше (~53 МБ вместо ~95). **Своя подписка** [MyAppVPN-subs](https://github.com/indelingDanil/MyAppVPN-subs) с ботом, который сам находит и чистит источники. OpenFlux: режим коротких запросов для «тормозящих» операторов, запасной адрес сервера и кнопка «Диагностика подключения»
+- **v2.2.0** — **OpenFlux в 2,5–5 раз быстрее** (новый протокол без переподключений). **Закрыта утечка IP сервера при раздельном туннелировании** ([#8](../../issues/8)): приложения мимо VPN больше не пробираются в туннель через `tun0`, локальный API и прокси закрыты от других приложений. Новая настройка **«Обход DPI (фрагментация TLS)»**. Подключение OpenFlux по ссылкам `openflux://`. Диагностика проверяет доступность сервисов и «белые списки». Работает на **Android TV**. **Исходный код открыт** (GPL-3.0)
+
+## Исходный код
+
+Код приложения открыт под **GPL-3.0**: [indelingDanil/MyAppVPN-CodeBase](https://github.com/indelingDanil/MyAppVPN-CodeBase).
 
 ## Важно
 
@@ -140,7 +155,7 @@ https://cdn.jsdelivr.net/gh/indelingDanil/MyAppVPN-subs@output/vless.txt
 
 A VPN for Android. Built for myself and for people — to just work, not to be sold to a startup in a year.
 
-4,000+ downloads over the project's lifetime (check the release notes by version if you want proof).
+30,000+ downloads over the project's lifetime (see the per-release counters).
 
 If you like the app, drop a ⭐ "STAR" ❤️  
 
@@ -160,7 +175,7 @@ If the app has been useful and you'd like to support it, I'll be happy to receiv
 
 Thank you to everyone who uses the app ❤️
 
-**Current version: v2.1.2** — the project is alive, fixes and features are released as issues are discovered.
+**Current version: v2.2.0** — the project is alive, fixes and features are released as issues are discovered.
 
 > ⚠️ **Disclaimer.** This is an **educational** project — made for learning and research purposes.
 > The author **is not responsible** for how you use the application. Remember: in Russia,
@@ -180,6 +195,16 @@ Thank you to everyone who uses the app ❤️
 **Which file** (Android 8.0 or newer):
 - `my-app-vpn-…-arm64.apk` — for most phones;
 - `my-app-vpn-…-arm32.apk` — for 32-bit Android (budget/older devices, e.g. Samsung Galaxy A01 / A10 / A20 / A30, J and M series). Use it if the arm64 build says "App not installed".
+
+## Screenshots
+
+<p align="center">
+  <img src="docs/screenshots/home-dark.png" width="200" alt="Home">
+  <img src="docs/screenshots/servers.png" width="200" alt="Servers">
+  <img src="docs/screenshots/settings.png" width="200" alt="Settings">
+  <img src="docs/screenshots/stats.png" width="200" alt="Statistics">
+  <img src="docs/screenshots/home-light.png" width="200" alt="Light theme">
+</p>
 
 ## Features
 
@@ -247,6 +272,11 @@ If you need a specific app to bypass the VPN: **Settings → Choose apps** → t
 - **v2.1.0** — big update. Auto/Manual reworked: live switching both ways, manual mode no longer silently jumps to another (possibly Russian) server, you can see which server carries your traffic. **Custom DNS servers** (a follower's idea). Split tunneling: "only selected apps via VPN" mode and "select all / invert" (also a GitHub idea). Hotspot sharing rebuilt and finally works as documented. Always-on VPN and auto-connect on boot. Security: the kill switch keeps the local port bound, random per-session ports, SSRF-hardened subscriptions. Fixes: base64 subscriptions, lost port on `host:port/?…` servers, one broken server no longer takes down the whole Auto mode, the Home tab button. UI fully in Russian (+ English), new "Support" tab
 - **v2.1.1-beta** (pre-release) — experimental **OpenFlux** mode: your own exit on ordinary web hosting instead of VLESS servers, sessions survive cuts. A demo server to try it (1 hour or 2 GB once, 8 slots); guide for your own exit — the [`openflux-exit`](../../tree/openflux-exit) branch
 - **v2.1.2** — **new design**: a calm palette with a single blue accent instead of neon, a floating glass bottom bar, a new connect button, **light theme**. **32-bit Android support** (a separate arm32 APK, requested by a follower). The APK is almost half the size (~53 MB instead of ~95). **Our own subscription** [MyAppVPN-subs](https://github.com/indelingDanil/MyAppVPN-subs) with a bot that finds and cleans sources itself. OpenFlux: short-request mode for carriers that stall long responses, a fallback server address and a "Connection diagnostics" button
+- **v2.2.0** — **OpenFlux 2.5–5× faster** (new protocol, no reconnects). **Split-tunnel IP leak fixed** ([#8](../../issues/8)): apps outside the VPN can no longer reach the tunnel via `tun0`; the local API and proxies are closed to other apps. New **"DPI bypass (TLS fragmentation)"** setting. OpenFlux `openflux://` links. Diagnostics probe services and whitelist-only networks. Runs on **Android TV**. **Source code is open** (GPL-3.0)
+
+## Source code
+
+The app's source is open under **GPL-3.0**: [indelingDanil/MyAppVPN-CodeBase](https://github.com/indelingDanil/MyAppVPN-CodeBase).
 
 ## Important
 
