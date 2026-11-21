@@ -73,7 +73,7 @@ OpenFlux (Beta) is for networks where regular VLESS servers are blocked: the app
 
 ## Own subscription: MyAppVPN-subs
 
-[MyAppVPN-subs](https://github.com/indelingDanil/MyAppVPN-subs) is a GitHub Actions bot that finds public VLESS subscriptions, drops deleted and stale sources, collects and checks servers every 3 hours, keeps only REALITY / TLS ones and publishes a cleaned list with country flags. It's built into the app as "MyAppVPN (auto-collected)" (can be turned off in Settings → Subscriptions). Link for other clients (v2rayNG, Hiddify, etc.):
+[MyAppVPN-subs](https://github.com/indelingDanil/MyAppVPN-subs) is a GitHub Actions bot that finds public VLESS subscriptions, drops deleted and stale sources, collects and checks servers every 3 hours, keeps only REALITY / TLS ones and publishes a cleaned list with country flags. It's built into the app as "MyAppVPN (авто-сбор)" (auto-collected; can be turned off in Settings → Subscriptions). Link for other clients (v2rayNG, Hiddify, etc.):
 
 ```
 https://cdn.jsdelivr.net/gh/indelingDanil/MyAppVPN-subs@output/vless.txt

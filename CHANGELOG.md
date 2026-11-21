@@ -2,6 +2,12 @@
 
 All notable changes to [MyAppVPN](README.md), newest first. APKs for every version are on the [Releases](https://github.com/indelingDanil/MyAppVPN/releases) page.
 
+## v2.2.0.1 — 2026-11-21
+
+- **New UI languages:** Persian, Simplified Chinese, Turkish, Kazakh and Uzbek (seven with Russian and English).
+- **Settings → Appearance → Language:** follows the system language by default; any of the seven can be picked. On Android 13+ it can also be set in the system app settings.
+- Nothing else changed. The diagnostics report and some error messages are still in Russian/English.
+
 ## v2.2.0 — 2026-11-21
 
 - **OpenFlux 2.5–5× faster.** Reworked protocol: downloads are no longer cut every 4 MB, connections are swapped without a break (make-before-break), and the exit copes better with stalled sites.
