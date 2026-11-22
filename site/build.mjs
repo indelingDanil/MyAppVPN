@@ -51,6 +51,8 @@ async function build() {
 ${avail.map((l) => `  <url>\n    <loc>${urlOf(l)}</loc>\n    <lastmod>${today}</lastmod>\n${alt}\n  </url>`).join("\n")}
 </urlset>
 `);
+  // plain-text fallback sitemap (one URL per line)
+  fs.writeFileSync(path.join(docs, "sitemap.txt"), avail.map((l) => urlOf(l)).join("\n") + "\n");
   fs.writeFileSync(path.join(docs, ".nojekyll"), "");
   // 404: GitHub Pages serves docs/404.html for unknown paths under /MyAppVPN/
   const links = avail.map((l) => `<a href="${urlOf(l)}" hreflang="${l.hreflang}">${strings[l.lang].langName}</a>`).join(" · ");
