@@ -1,0 +1,182 @@
+{
+  "lang": "uz",
+  "dir": "ltr",
+  "langName": "Oʻzbekcha",
+  "meta": {
+    "title": "MyAppVPN — Android uchun bepul VLESS / Xray VPN mijozi",
+    "description": "Xray-core asosidagi ochiq kodli Android VPN mijozi: VLESS + REALITY, serverni avto tanlash, uzilishsiz almashish, tunnelni ajratish, DPI ni chetlab oʻtish.",
+    "ogTitle": "MyAppVPN — bir bosish, ishlaydigan server",
+    "keywords": "bepul VPN, bepul VPN Android, VLESS mijozi Android, Xray Android, REALITY VPN, v2rayNG muqobili, Hiddify muqobili, tunnelni ajratish, ochiq kodli VPN"
+  },
+  "nav": {
+    "features": "Imkoniyatlar",
+    "screens": "Skrinshotlar",
+    "faq": "Savollar",
+    "download": "Yuklab olish"
+  },
+  "hero": {
+    "eyebrow": "Ochiq kod · Android 8.0+ · Android TV",
+    "title": "Bir bosish.<br><em>Ishlaydigan server.</em>",
+    "sub": "MyAppVPN — Android uchun bepul Xray / VLESS mijozi. U haqiqatan ishlaydigan serverni oʻzi topadi, ulanadi va joriy server bloklansa, sizni sezdirmasdan boshqasiga oʻtkazadi.",
+    "cta": "APK yuklab olish",
+    "ctaNote": "Bepul · reklamasiz · roʻyxatdan oʻtishsiz",
+    "source": "GitHubdagi manba kodi",
+    "statusOff": "Himoyalanmagan",
+    "statusSearch": "Ishlaydigan server qidirilmoqda…",
+    "statusOn": "Himoyalangan",
+    "connect": "ULANISH",
+    "h1": "MyAppVPN — Android uchun bepul VLESS / Xray VPN mijozi",
+    "disconnect": "UZISH"
+  },
+  "stats": [
+    {
+      "value": "30 000+",
+      "label": "yuklab olish"
+    },
+    {
+      "value": "7",
+      "label": "interfeys tili"
+    },
+    {
+      "value": "0",
+      "label": "reklama va treker"
+    },
+    {
+      "value": "GPL-3.0",
+      "label": "ochiq kod"
+    }
+  ],
+  "features": {
+    "kicker": "Nimalar qila oladi",
+    "title": "Bloklaydigan tarmoqlar uchun yaratilgan",
+    "items": [
+      {
+        "icon": "bolt",
+        "t": "Avto rejim",
+        "d": "Bitta tugma. Ilova serverlarni tekshiradi va Telegram haqiqatan ochiladigan eng tez serverga ulanadi — shunchaki pingi eng yaxshisiga emas."
+      },
+      {
+        "icon": "swap",
+        "t": "Uzilishsiz almashish",
+        "d": "Server bloklansa, trafik darhol boshqa serverga oʻtadi, ulanish uzilmaydi."
+      },
+      {
+        "icon": "list",
+        "t": "Ichki bepul serverlar",
+        "d": "Bot har bir necha soatda yigʻib, tekshirib turadigan, avtomatik yangilanadigan obuna. Oʻz obunalaringizni ham qoʻshishingiz mumkin."
+      },
+      {
+        "icon": "shield",
+        "t": "VLESS + REALITY",
+        "d": "Xray-core asosida ishlaydi. Ichki roʻyxatga faqat REALITY va TLS serverlari kiradi."
+      },
+      {
+        "icon": "split",
+        "t": "Tunnelni ajratish",
+        "d": "VPNni chetlab oʻtadigan ilovalarni tanlang — yoki aksincha, VPN orqali faqat tanlanganlarini yuboring."
+      },
+      {
+        "icon": "wave",
+        "t": "DPI ni chetlab oʻtish",
+        "d": "Ixtiyoriy TLS fragmentatsiyasi ulanish boshini boʻlaklarga ajratadi, shuning uchun oddiy DPI server nomini oʻqiy olmaydi."
+      },
+      {
+        "icon": "node",
+        "t": "OpenFlux",
+        "d": "Oddiy serverlar oʻtmaydigan tarmoqlar uchun oddiy veb-xostingdagi oʻz chiqish nuqtangiz. Beta."
+      },
+      {
+        "icon": "tv",
+        "t": "Telefonlar va televizorlar",
+        "d": "Android TV pristavkalari va televizorlarida ishlaydi, VPNni hotspot orqali tarqatadi, favqulodda uzish (kill switch) va doimiy yoqilgan VPN bor."
+      }
+    ]
+  },
+  "steps": {
+    "kicker": "Qanday ishlaydi",
+    "title": "Uch qadam, sozlashsiz",
+    "items": [
+      {
+        "t": "APKni oʻrnating",
+        "d": "GitHub Releasesdan yuklab oling va nomaʼlum manbalardan oʻrnatishga ruxsat bering."
+      },
+      {
+        "t": "«ULANISH» tugmasini bosing",
+        "d": "Akkauntsiz, kalitsiz, konfiguratsiya fayllarini joylashtirmasdan."
+      },
+      {
+        "t": "Tayyor",
+        "d": "Ilova ishlaydigan serverni tanlaydi, ulanishni ushlab turadi va kerak boʻlganda almashtiradi."
+      }
+    ]
+  },
+  "screens": {
+    "kicker": "Skrinshotlar",
+    "title": "Sokin, shishasimon, bitta urgʻu rangi",
+    "caps": [
+      "Asosiy",
+      "Serverlar",
+      "Sozlamalar",
+      "Statistika",
+      "Yorugʻ mavzu"
+    ]
+  },
+  "subs": {
+    "kicker": "Boshqa mijozdan foydalanasizmi?",
+    "title": "Obunani oʻzingiz bilan olib keting",
+    "text": "Ilova foydalanadigan serverlar roʻyxati ochiq. Uni v2rayNG, Hiddify yoki VLESS obunalarini oʻqiy oladigan istalgan mijozga qoʻshing.",
+    "copy": "Nusxalash",
+    "copied": "Nusxalandi",
+    "repo": "Bot qanday ishlaydi"
+  },
+  "faq": {
+    "kicker": "Savollar",
+    "title": "Koʻp beriladigan savollar",
+    "items": [
+      {
+        "q": "MyAppVPN bepulmi?",
+        "a": "Ha. Pullik obunasiz, reklamasiz, akkauntsiz. Bu ochiq kodli shaxsiy loyiha; xayriyalar mamnuniyat bilan qabul qilinadi, lekin majburiy emas."
+      },
+      {
+        "q": "Qaysi faylni yuklab olish kerak?",
+        "a": "<b>arm64</b> koʻpchilik telefonlar, TV pristavkalari va televizorlarga mos keladi. «Ilova oʻrnatilmadi» degan xabar chiqsa, <b>arm32</b> ni oling — u 32 bitli va eski arzon qurilmalar uchun. Android 8.0 yoki undan yangisi kerak."
+      },
+      {
+        "q": "Nega Google Playda yoʻq?",
+        "a": "Google Playda VPN ilovalari uchun qatʼiy qoidalar bor, ilova esa oʻziga tegishli boʻlmagan ommaviy serverlar bilan ishlaydi. Rasmiy manba — GitHub Releasesdagi APK; yangilanishlar oldingi versiya ustidan oʻrnatiladi va sozlamalaringiz saqlanadi."
+      },
+      {
+        "q": "Bepul serverlar xavfsizmi?",
+        "a": "Bular nomaʼlum odamlar boshqaradigan ommaviy serverlar. Ular shifrlanmagan trafikni koʻra oladi, shuning uchun ular orqali parollar yoki bank maʼlumotlarini yubormang. HTTPS saytlar shifrlangan holda qoladi. Muhim ishlar uchun oʻz serveringiz yoki obunangizni qoʻshing."
+      },
+      {
+        "q": "Qaysi protokollar qoʻllab-quvvatlanadi?",
+        "a": "Xray-core orqali TCP, WebSocket, gRPC, HTTPUpgrade, XHTTP va mKCP ustidan REALITY yoki TLS bilan VLESS. Bundan tashqari OpenFlux — veb-xostingdagi oʻz chiqish nuqtangiz bilan ishlaydigan alohida rejim."
+      },
+      {
+        "q": "Ilova maʼlumot yigʻadimi?",
+        "a": "Yoʻq: na telemetriya, na analitika. Manba kodi GPL-3.0 ostida ochiq, istalgan kishi tekshirishi mumkin."
+      },
+      {
+        "q": "Android TVda ishlaydimi?",
+        "a": "Ha, Android 8.0+ oʻrnatilgan pristavkalar va televizorlarda. arm64 APKni oʻrnating; koʻpchilik pristavkalar uni qoʻllab-quvvatlaydi."
+      }
+    ]
+  },
+  "download": {
+    "title": "MyAppVPNni yuklab oling",
+    "text": "Eng soʻnggi versiya GitHub Releasesda. Qurilmangizga mos faylni tanlang:",
+    "arm64": "arm64 — koʻpchilik telefonlar va televizorlar",
+    "arm32": "arm32 — 32 bitli va eski qurilmalar",
+    "button": "Releasesni ochish",
+    "telegram": "Telegramdagi yangiliklar"
+  },
+  "disclaimer": "Taʼlimiy va tadqiqot loyihasi. Muallif ilovadan qanday foydalanilishi uchun javobgar emas. Ayrim mamlakatlarda, jumladan Rossiyada, bloklarni chetlab oʻtish uchun VPN xizmatlari qonun bilan cheklangan. Oʻz xavf-xataringiz ostida foydalaning va mamlakatingiz qonunlariga rioya qiling.",
+  "footer": {
+    "source": "Manba kodi",
+    "subs": "Obuna",
+    "telegram": "Telegram",
+    "license": "GPL-3.0",
+    "language": "Til"
+  }
+}

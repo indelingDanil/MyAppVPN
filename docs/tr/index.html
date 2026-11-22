@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="tr" dir="ltr" data-lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MyAppVPN — Android için ücretsiz VLESS / Xray VPN istemcisi</title>
+<meta name="description" content="Xray-core tabanlı açık kaynak Android VPN istemcisi: VLESS + REALITY, tek dokunuşla otomatik sunucu, kesintisiz geçiş, bölünmüş tünel, DPI atlatma, Android TV.">
+<meta name="keywords" content="ücretsiz VPN, ücretsiz VPN uygulaması Android, VLESS istemcisi Android, Xray Android, REALITY VPN, v2rayNG alternatifi, Hiddify alternatifi, bölünmüş tünel, açık kaynak VPN">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#07090d">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://indelingdanil.github.io/MyAppVPN/tr/">
+<link rel="alternate" hreflang="en" href="https://indelingdanil.github.io/MyAppVPN/">
+<link rel="alternate" hreflang="ru" href="https://indelingdanil.github.io/MyAppVPN/ru/">
+<link rel="alternate" hreflang="fa" href="https://indelingdanil.github.io/MyAppVPN/fa/">
+<link rel="alternate" hreflang="zh-Hans" href="https://indelingdanil.github.io/MyAppVPN/zh/">
+<link rel="alternate" hreflang="tr" href="https://indelingdanil.github.io/MyAppVPN/tr/">
+<link rel="alternate" hreflang="kk" href="https://indelingdanil.github.io/MyAppVPN/kk/">
+<link rel="alternate" hreflang="uz" href="https://indelingdanil.github.io/MyAppVPN/uz/">
+<link rel="alternate" hreflang="x-default" href="https://indelingdanil.github.io/MyAppVPN/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MyAppVPN">
+<meta property="og:title" content="MyAppVPN — tek dokunuş, çalışan bir sunucu">
+<meta property="og:description" content="Xray-core tabanlı açık kaynak Android VPN istemcisi: VLESS + REALITY, tek dokunuşla otomatik sunucu, kesintisiz geçiş, bölünmüş tünel, DPI atlatma, Android TV.">
+<meta property="og:url" content="https://indelingdanil.github.io/MyAppVPN/tr/">
+<meta property="og:image" content="https://indelingdanil.github.io/MyAppVPN/assets/og-tr.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="tr_TR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta property="og:locale:alternate" content="fa_IR">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="kk_KZ">
+<meta property="og:locale:alternate" content="uz_UZ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MyAppVPN — tek dokunuş, çalışan bir sunucu">
+<meta name="twitter:description" content="Xray-core tabanlı açık kaynak Android VPN istemcisi: VLESS + REALITY, tek dokunuşla otomatik sunucu, kesintisiz geçiş, bölünmüş tünel, DPI atlatma, Android TV.">
+<meta name="twitter:image" content="https://indelingdanil.github.io/MyAppVPN/assets/og-tr.png">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="../assets/site.css?v=mwrp3dle">
+<link rel="preload" as="image" href="../screenshots/home-dark.png">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"MyAppVPN","operatingSystem":"Android 8.0+","applicationCategory":"SecurityApplication","description":"Xray-core tabanlı açık kaynak Android VPN istemcisi: VLESS + REALITY, tek dokunuşla otomatik sunucu, kesintisiz geçiş, bölünmüş tünel, DPI atlatma, Android TV.","url":"https://indelingdanil.github.io/MyAppVPN/tr/","downloadUrl":"https://github.com/indelingDanil/MyAppVPN/releases/latest","installUrl":"https://github.com/indelingDanil/MyAppVPN/releases/latest","softwareVersion":"2.2.0.1","license":"https://www.gnu.org/licenses/gpl-3.0.html","isAccessibleForFree":true,"inLanguage":["en","ru","fa","zh-Hans","tr","kk","uz"],"screenshot":["https://indelingdanil.github.io/MyAppVPN/screenshots/home-dark.png","https://indelingdanil.github.io/MyAppVPN/screenshots/servers.png","https://indelingdanil.github.io/MyAppVPN/screenshots/settings.png","https://indelingdanil.github.io/MyAppVPN/screenshots/stats.png"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"indelingDanil","url":"https://github.com/indelingDanil"},"codeRepository":"https://github.com/indelingDanil/MyAppVPN-CodeBase"},{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"tr","mainEntity":[{"@type":"Question","name":"MyAppVPN ücretsiz mi?","acceptedAnswer":{"@type":"Answer","text":"Evet. Ücretli abonelik yok, reklam yok, hesap yok. Kişisel bir açık kaynak projesidir; bağışlar memnuniyetle karşılanır ama zorunlu değildir."}},{"@type":"Question","name":"Hangi dosyayı indirmeliyim?","acceptedAnswer":{"@type":"Answer","text":"arm64 çoğu telefona, TV kutusuna ve televizyona uygundur. \"Uygulama yüklenmedi\" hatası alırsanız arm32'yi indirin — 32 bit ve eski, uygun fiyatlı cihazlar içindir. Android 8.0 veya üzeri gerekir."}},{"@type":"Question","name":"Neden Google Play'de yok?","acceptedAnswer":{"@type":"Answer","text":"Google Play'in VPN uygulamaları için katı kuralları var ve uygulama, sahibi olmadığı herkese açık sunucularla çalışıyor. Resmi kaynak GitHub Releases'taki APK'dır; güncellemeler önceki sürümün üzerine yüklenir ve ayarlarınız korunur."}},{"@type":"Question","name":"Ücretsiz sunucular güvenli mi?","acceptedAnswer":{"@type":"Answer","text":"Bunlar kim olduğu bilinmeyen kişilerin işlettiği herkese açık sunuculardır. Şifrelenmemiş trafiği görebilirler, bu yüzden şifrelerinizi veya banka bilgilerinizi bu sunucular üzerinden göndermeyin. HTTPS siteleri şifreli kalır. Hassas işler için kendi sunucunuzu veya aboneliğinizi ekleyin."}},{"@type":"Question","name":"Hangi protokoller destekleniyor?","acceptedAnswer":{"@type":"Answer","text":"Xray-core üzerinden TCP, WebSocket, gRPC, HTTPUpgrade, XHTTP ve mKCP ile REALITY veya TLS kullanan VLESS. Ayrıca web hostingde kendi çıkış noktanızı kullanan ayrı bir mod olan OpenFlux."}},{"@type":"Question","name":"Veri topluyor mu?","acceptedAnswer":{"@type":"Answer","text":"Hayır. Telemetri de analitik de yok. Kaynak kod GPL-3.0 lisansıyla açık, isteyen herkes kontrol edebilir."}},{"@type":"Question","name":"Android TV'de çalışıyor mu?","acceptedAnswer":{"@type":"Answer","text":"Evet, Android 8.0+ yüklü TV kutularında ve televizyonlarda. arm64 APK'yı yükleyin; çoğu kutu bunu destekler."}}]}]</script>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#main">Özellikler</a>
+<canvas id="field" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<header class="top" data-top>
+  <a class="brand" href="../" aria-label="MyAppVPN"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8FB8FF"/><stop offset="1" stop-color="#3E7BFA"/></linearGradient></defs><circle cx="16" cy="16" r="14" fill="none" stroke="url(#lg)" stroke-width="2.4" stroke-dasharray="66 22" transform="rotate(-60 16 16)"/><circle cx="16" cy="16" r="5" fill="url(#lg)"/></svg><span>MyAppVPN</span></a>
+  <nav class="nav" aria-label="Main">
+    <a href="#features">Özellikler</a>
+    <a href="#screens">Ekran görüntüleri</a>
+    <a href="#faq">SSS</a>
+  </nav>
+  <div class="top-actions">
+    <details class="lang" data-lang-menu>
+      <summary aria-label="Dil"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/></svg><span>Türkçe</span><svg class="i chev" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+      <div class="lang-menu"><a href="../" hreflang="en" lang="en" data-lang="en">English</a><a href="../ru/" hreflang="ru" lang="ru" data-lang="ru">Русский</a><a href="../fa/" hreflang="fa" lang="fa" data-lang="fa">فارسی</a><a href="../zh/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh">简体中文</a><a href="../tr/" hreflang="tr" lang="tr" aria-current="page" data-lang="tr">Türkçe</a><a href="../kk/" hreflang="kk" lang="kk" data-lang="kk">Қазақша</a><a href="../uz/" hreflang="uz" lang="uz" data-lang="uz">Oʻzbekcha</a></div>
+    </details>
+    <a class="btn btn-ghost btn-sm gh" href="https://github.com/indelingDanil/MyAppVPN-CodeBase" rel="noopener" target="_blank" aria-label="GitHub"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2Z" fill="currentColor" stroke="none"/></svg><span class="gh-stars" data-stars></span></a>
+    <a class="btn btn-primary btn-sm" href="#download" data-magnetic>İndir</a>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="hero-copy">
+    <p class="eyebrow" data-intro>Açık kaynak · Android 8.0+ · Android TV</p>
+    <h1 class="hero-h1" data-intro>MyAppVPN — Android için ücretsiz VLESS / Xray VPN istemcisi</h1>
+    <p class="hero-title"><span class="line"><span class="line-in" style="--i:0">Tek dokunuş.</span></span><span class="line"><span class="line-in" style="--i:1"><em>Çalışan bir sunucu.</em></span></span></p>
+    <p class="hero-sub" data-intro>MyAppVPN, Android için ücretsiz bir Xray / VLESS istemcisidir. Gerçekten çalışan bir sunucu bulur, bağlanır ve mevcut sunucu engellenirse sizi sessizce başka birine geçirir.</p>
+    <div class="hero-cta" data-intro>
+      <a class="btn btn-primary btn-lg" href="https://github.com/indelingDanil/MyAppVPN/releases/latest" rel="noopener" data-magnetic data-dl><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg><span>APK indir</span></a>
+      <a class="btn btn-ghost btn-lg" href="https://github.com/indelingDanil/MyAppVPN-CodeBase" rel="noopener" target="_blank"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2Z" fill="currentColor" stroke="none"/></svg><span>GitHub'da kaynak kod</span></a>
+    </div>
+    <p class="hero-note" data-intro>Ücretsiz · reklamsız · hesap gerekmez</p>
+  </div>
+
+  <div class="hero-visual" data-intro-visual>
+    <div class="rings" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="orbit" aria-hidden="true">
+      <span class="chip" style="--a:0"><span><span>NL · reality</span></span></span>
+      <span class="chip" style="--a:1"><span><span>DE · reality</span></span></span>
+      <span class="chip" style="--a:2"><span><span>SG · reality</span></span></span>
+      <span class="chip" style="--a:3"><span><span>FI · tls</span></span></span>
+      <span class="chip" style="--a:4"><span><span>JP · reality</span></span></span>
+      <span class="chip" style="--a:5"><span><span>PL · xhttp</span></span></span>
+    </div>
+    <div class="phone" data-phone role="img" aria-label="MyAppVPN — Korunuyor">
+      <div class="phone-screen" data-state="off">
+        <div class="ph-status-bar"><span>9:41</span><span class="ph-icons"><i></i><i></i><i></i></span></div>
+        <div class="ph-title">MyAppVPN</div>
+        <div class="ph-state">
+          <span data-s="off">Korunmuyor</span>
+          <span data-s="search">Çalışan bir sunucu aranıyor…</span>
+          <span data-s="on">Korunuyor</span>
+        </div>
+        <div class="ph-seg"><span class="on">⚡ Auto</span><span>📍 Manual</span></div>
+        <div class="ph-server"><b class="cc" data-cc>SG</b><span data-srv>reality-0031</span><em data-ping>84 ms</em></div>
+        <div class="ph-btn-wrap">
+          <svg class="ph-arc" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="94" pathLength="100"/></svg>
+          <button class="ph-btn" type="button" tabindex="-1" aria-hidden="true"><svg class="i pw" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v8"/><path d="M6.3 6.3a8 8 0 1 0 11.4 0"/></svg><span class="lbl-off">BAĞLAN</span><span class="lbl-on">BAĞLANTIYI KES</span></button>
+        </div>
+        <div class="ph-speed"><span>↓ <b data-down>0.0</b> MB/s</span><span>↑ <b data-up>0.0</b> MB/s</span></div>
+        <nav class="ph-nav" aria-hidden="true"><span class="on"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-9Z"/></svg></span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/></svg></span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20V10M12 20V4M18 20v-7"/></svg></span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg></span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg></span></nav>
+      </div>
+    </div>
+  </div>
+
+  <a class="scroll-cue" href="#stats" aria-label="Özellikler"><span></span></a>
+</section>
+
+<section class="stats" id="stats">
+  <div class="stat" data-reveal><b data-count="30.000+">30.000+</b><span>indirme</span></div><div class="stat" data-reveal><b data-count="7">7</b><span>arayüz dili</span></div><div class="stat" data-reveal><b data-count="0">0</b><span>reklam ve izleyici</span></div><div class="stat" data-reveal><b data-count="GPL-3.0">GPL-3.0</b><span>açık kaynak</span></div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><span>VLESS</span><i>✦</i><span>REALITY</span><i>✦</i><span>Xray-core</span><i>✦</i><span>XHTTP</span><i>✦</i><span>gRPC</span><i>✦</i><span>WebSocket</span><i>✦</i><span>TLS fragmentation</span><i>✦</i><span>Split tunneling</span><i>✦</i><span>Kill switch</span><i>✦</i><span>Android TV</span><i>✦</i><span>OpenFlux</span><i>✦</i><span>GPL-3.0</span><i>✦</i><span>VLESS</span><i>✦</i><span>REALITY</span><i>✦</i><span>Xray-core</span><i>✦</i><span>XHTTP</span><i>✦</i><span>gRPC</span><i>✦</i><span>WebSocket</span><i>✦</i><span>TLS fragmentation</span><i>✦</i><span>Split tunneling</span><i>✦</i><span>Kill switch</span><i>✦</i><span>Android TV</span><i>✦</i><span>OpenFlux</span><i>✦</i><span>GPL-3.0</span><i>✦</i></div></div>
+
+<section class="features" id="features">
+  <header class="sec-head">
+    <p class="kicker" data-reveal>Neler yapar</p>
+    <h2 data-reveal>Engelleyen ağlar için tasarlandı</h2>
+  </header>
+  <div class="bento">
+    <article class="card card-0" data-card>
+      <div class="card-glow" aria-hidden="true"></div>
+      <span class="card-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></span>
+      <h3>Otomatik mod</h3>
+      <p>Tek bir düğme. Uygulama sunucuları test eder ve Telegram'ı gerçekten açabilen en hızlı sunucuya bağlanır — sadece pingi en iyi olana değil.</p>
+    </article><article class="card card-1" data-card>
+      <div class="card-glow" aria-hidden="true"></div>
+      <span class="card-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h13l-3-3M20 17H7l3 3"/></svg></span>
+      <h3>Kesintisiz geçiş</h3>
+      <p>Bir sunucu engellendiğinde trafik anında başka bir sunucuya aktarılır, bağlantı kopmaz.</p>
+    </article><article class="card card-2" data-card>
+      <div class="card-glow" aria-hidden="true"></div>
+      <span class="card-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg></span>
+      <h3>Dahili ücretsiz sunucular</h3>
+      <p>Bir botun birkaç saatte bir toplayıp kontrol ettiği, otomatik güncellenen bir abonelik. Kendi aboneliklerinizi de ekleyebilirsiniz.</p>
+    </article><article class="card card-3" data-card>
+      <div class="card-glow" aria-hidden="true"></div>
+      <span class="card-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+      <h3>VLESS + REALITY</h3>
+      <p>Xray-core ile çalışır. Dahili listeye yalnızca REALITY ve TLS sunucuları girer.</p>
+    </article><article class="card card-4" data-card>
+      <div class="card-glow" aria-hidden="true"></div>
+      <span class="card-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-7M12 14 6 4M12 14l6-10M6 4H3M6 4v3M18 4h3M18 4v3"/></svg></span>
+      <h3>Bölünmüş tünel</h3>
+      <p>VPN'i atlayacak uygulamaları seçin — ya da tam tersi, yalnızca seçtiğiniz uygulamaları VPN'den geçirin.</p>
+    </article><article class="card card-5" data-card>
+      <div class="card-glow" aria-hidden="true"></div>
+      <span class="card-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l2-6 3 12 3-9 2 3h5"/></svg></span>
+      <h3>DPI atlatma</h3>
+      <p>İsteğe bağlı TLS parçalama, bağlantının başlangıcını böler; böylece basit DPI sunucu adını okuyamaz.</p>
+    </article><article class="card card-6" data-card>
+      <div class="card-glow" aria-hidden="true"></div>
+      <span class="card-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="4" cy="5" r="2"/><circle cx="20" cy="5" r="2"/><circle cx="12" cy="21" r="1.5"/><path d="m6 6 4 4M18 6l-4 4M12 15v4.5"/></svg></span>
+      <h3>OpenFlux</h3>
+      <p>Normal sunucuların geçemediği ağlar için sıradan bir web hostingde kendi çıkış noktanız. Beta.</p>
+    </article><article class="card card-7" data-card>
+      <div class="card-glow" aria-hidden="true"></div>
+      <span class="card-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+      <h3>Telefon ve TV</h3>
+      <p>Android TV kutularında ve televizyonlarda çalışır, VPN'i hotspot üzerinden paylaşır; kill switch ve Her zaman açık VPN desteği vardır.</p>
+    </article>
+  </div>
+</section>
+
+<section class="steps" id="how">
+  <header class="sec-head">
+    <p class="kicker" data-reveal>Nasıl çalışır</p>
+    <h2 data-reveal>Üç adım, kurulum yok</h2>
+  </header>
+  <ol class="steps-list" data-steps>
+    <svg class="steps-line" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 4 100"><line x1="2" y1="0" x2="2" y2="100" pathLength="1"/></svg>
+    <li class="step" data-step><span class="step-n">1</span><div><h3>APK'yı yükleyin</h3><p>GitHub Releases'tan indirin ve bilinmeyen kaynaklardan yüklemeye izin verin.</p></div></li><li class="step" data-step><span class="step-n">2</span><div><h3>BAĞLAN'a dokunun</h3><p>Hesap yok, anahtar yok, yapıştırılacak yapılandırma dosyası yok.</p></div></li><li class="step" data-step><span class="step-n">3</span><div><h3>Hazır</h3><p>Uygulama çalışan bir sunucu seçer, bağlantınızı korur ve gerektiğinde sunucu değiştirir.</p></div></li>
+  </ol>
+</section>
+
+<section class="screens" id="screens" data-screens>
+  <div class="screens-pin">
+    <header class="sec-head">
+      <p class="kicker" data-reveal>Ekran görüntüleri</p>
+      <h2 data-reveal>Sakin, cam efekti, tek vurgu rengi</h2>
+    </header>
+    <div class="screens-track" data-track>
+      <figure class="shot">
+        <div class="shot-frame"><img src="../screenshots/home-dark.png" width="360" height="740" loading="eager" decoding="async" alt="MyAppVPN — Ana Sayfa"></div>
+        <figcaption>Ana Sayfa</figcaption>
+      </figure><figure class="shot">
+        <div class="shot-frame"><img src="../screenshots/servers.png" width="360" height="740" loading="lazy" decoding="async" alt="MyAppVPN — Sunucular"></div>
+        <figcaption>Sunucular</figcaption>
+      </figure><figure class="shot">
+        <div class="shot-frame"><img src="../screenshots/settings.png" width="360" height="740" loading="lazy" decoding="async" alt="MyAppVPN — Ayarlar"></div>
+        <figcaption>Ayarlar</figcaption>
+      </figure><figure class="shot">
+        <div class="shot-frame"><img src="../screenshots/stats.png" width="360" height="740" loading="lazy" decoding="async" alt="MyAppVPN — İstatistik"></div>
+        <figcaption>İstatistik</figcaption>
+      </figure><figure class="shot">
+        <div class="shot-frame"><img src="../screenshots/home-light.png" width="360" height="740" loading="lazy" decoding="async" alt="MyAppVPN — Açık tema"></div>
+        <figcaption>Açık tema</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="subs" id="subscription">
+  <div class="subs-card" data-reveal>
+    <p class="kicker">Başka bir istemci mi kullanıyorsunuz?</p>
+    <h2>Aboneliği yanınızda götürün</h2>
+    <p>Uygulamanın kullandığı sunucu listesi herkese açıktır. v2rayNG, Hiddify veya VLESS aboneliklerini okuyabilen herhangi bir istemciye ekleyin.</p>
+    <div class="copy-row">
+      <code data-copy-src>https://cdn.jsdelivr.net/gh/indelingDanil/MyAppVPN-subs@output/vless.txt</code>
+      <button class="btn btn-primary btn-sm" type="button" data-copy data-copied="Kopyalandı"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>Kopyala</span></button>
+    </div>
+    <a class="link" href="https://github.com/indelingDanil/MyAppVPN-subs" rel="noopener" target="_blank">Bot nasıl çalışır <svg class="i arr" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m0 0-6-6m6 6-6 6"/></svg></a>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <header class="sec-head">
+    <p class="kicker" data-reveal>SSS</p>
+    <h2 data-reveal>Sık sorulan sorular</h2>
+  </header>
+  <div class="faq-list">
+    <details class="qa" data-reveal><summary><h3>MyAppVPN ücretsiz mi?</h3><span class="qa-x" aria-hidden="true"></span></summary><div class="qa-a"><p>Evet. Ücretli abonelik yok, reklam yok, hesap yok. Kişisel bir açık kaynak projesidir; bağışlar memnuniyetle karşılanır ama zorunlu değildir.</p></div></details><details class="qa" data-reveal><summary><h3>Hangi dosyayı indirmeliyim?</h3><span class="qa-x" aria-hidden="true"></span></summary><div class="qa-a"><p><b>arm64</b> çoğu telefona, TV kutusuna ve televizyona uygundur. "Uygulama yüklenmedi" hatası alırsanız <b>arm32</b>'yi indirin — 32 bit ve eski, uygun fiyatlı cihazlar içindir. Android 8.0 veya üzeri gerekir.</p></div></details><details class="qa" data-reveal><summary><h3>Neden Google Play'de yok?</h3><span class="qa-x" aria-hidden="true"></span></summary><div class="qa-a"><p>Google Play'in VPN uygulamaları için katı kuralları var ve uygulama, sahibi olmadığı herkese açık sunucularla çalışıyor. Resmi kaynak GitHub Releases'taki APK'dır; güncellemeler önceki sürümün üzerine yüklenir ve ayarlarınız korunur.</p></div></details><details class="qa" data-reveal><summary><h3>Ücretsiz sunucular güvenli mi?</h3><span class="qa-x" aria-hidden="true"></span></summary><div class="qa-a"><p>Bunlar kim olduğu bilinmeyen kişilerin işlettiği herkese açık sunuculardır. Şifrelenmemiş trafiği görebilirler, bu yüzden şifrelerinizi veya banka bilgilerinizi bu sunucular üzerinden göndermeyin. HTTPS siteleri şifreli kalır. Hassas işler için kendi sunucunuzu veya aboneliğinizi ekleyin.</p></div></details><details class="qa" data-reveal><summary><h3>Hangi protokoller destekleniyor?</h3><span class="qa-x" aria-hidden="true"></span></summary><div class="qa-a"><p>Xray-core üzerinden TCP, WebSocket, gRPC, HTTPUpgrade, XHTTP ve mKCP ile REALITY veya TLS kullanan VLESS. Ayrıca web hostingde kendi çıkış noktanızı kullanan ayrı bir mod olan OpenFlux.</p></div></details><details class="qa" data-reveal><summary><h3>Veri topluyor mu?</h3><span class="qa-x" aria-hidden="true"></span></summary><div class="qa-a"><p>Hayır. Telemetri de analitik de yok. Kaynak kod GPL-3.0 lisansıyla açık, isteyen herkes kontrol edebilir.</p></div></details><details class="qa" data-reveal><summary><h3>Android TV'de çalışıyor mu?</h3><span class="qa-x" aria-hidden="true"></span></summary><div class="qa-a"><p>Evet, Android 8.0+ yüklü TV kutularında ve televizyonlarda. arm64 APK'yı yükleyin; çoğu kutu bunu destekler.</p></div></details>
+  </div>
+</section>
+
+<section class="download" id="download">
+  <div class="dl-card" data-reveal>
+    <div class="dl-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+    <h2>MyAppVPN'i edinin</h2>
+    <p>En son sürüm GitHub Releases'ta. Cihazınıza uygun dosyayı seçin:</p>
+    <ul class="dl-files">
+      <li><b>arm64</b><span>çoğu telefon ve TV</span></li>
+      <li><b>arm32</b><span>32 bit ve eski cihazlar</span></li>
+    </ul>
+    <div class="dl-cta">
+      <a class="btn btn-primary btn-lg" href="https://github.com/indelingDanil/MyAppVPN/releases/latest" rel="noopener" data-magnetic><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg><span>Releases'ı aç</span></a>
+      <a class="btn btn-ghost btn-lg" href="https://t.me/myappvpn_dprog" rel="noopener" target="_blank"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m21 4-18 7 6 2 2 6 3-4 5 4 2-15Z"/><path d="m9 13 8-6"/></svg><span>Telegram'da haberler</span></a>
+    </div>
+    <p class="dl-meta">v2.2.0.1 · Android 8.0+ · GPL-3.0</p>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="foot-top">
+    <a class="brand" href="../"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8FB8FF"/><stop offset="1" stop-color="#3E7BFA"/></linearGradient></defs><circle cx="16" cy="16" r="14" fill="none" stroke="url(#lg)" stroke-width="2.4" stroke-dasharray="66 22" transform="rotate(-60 16 16)"/><circle cx="16" cy="16" r="5" fill="url(#lg)"/></svg><span>MyAppVPN</span></a>
+    <nav class="foot-links">
+      <a href="https://github.com/indelingDanil/MyAppVPN-CodeBase" rel="noopener" target="_blank">Kaynak kod</a>
+      <a href="https://github.com/indelingDanil/MyAppVPN-subs" rel="noopener" target="_blank">Abonelik</a>
+      <a href="https://t.me/myappvpn_dprog" rel="noopener" target="_blank">Telegram</a>
+      <a href="https://github.com/indelingDanil/MyAppVPN/releases/latest" rel="noopener">Releases</a>
+    </nav>
+  </div>
+  <nav class="foot-langs" aria-label="Dil"><a href="../" hreflang="en" lang="en" data-lang="en">English</a><a href="../ru/" hreflang="ru" lang="ru" data-lang="ru">Русский</a><a href="../fa/" hreflang="fa" lang="fa" data-lang="fa">فارسی</a><a href="../zh/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh">简体中文</a><a href="../tr/" hreflang="tr" lang="tr" aria-current="page" data-lang="tr">Türkçe</a><a href="../kk/" hreflang="kk" lang="kk" data-lang="kk">Қазақша</a><a href="../uz/" hreflang="uz" lang="uz" data-lang="uz">Oʻzbekcha</a></nav>
+  <p class="disclaimer">⚠️ Eğitim ve araştırma amaçlı bir projedir. Yazar, uygulamanın nasıl kullanıldığından sorumlu değildir. Rusya dahil bazı ülkelerde engelleri aşmaya yönelik VPN hizmetleri yasalarla kısıtlanmıştır. Kullanım riski size aittir; lütfen ülkenizin yasalarına uyun.</p>
+  <p class="foot-copy">MyAppVPN · GPL-3.0</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.js" defer></script>
+<script src="../assets/site.js?v=mwrp3dle" defer></script>
+</body>
+</html>

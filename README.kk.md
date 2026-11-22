@@ -11,6 +11,7 @@
   <a href="https://github.com/indelingDanil/MyAppVPN/releases"><img src="https://img.shields.io/github/downloads/indelingDanil/MyAppVPN/total?label=downloads" alt="Жүктеп алулар"></a>
   <a href="https://github.com/indelingDanil/MyAppVPN-CodeBase"><img src="https://img.shields.io/badge/license-GPL--3.0-blue" alt="Лицензия GPL-3.0"></a>
   <img src="https://img.shields.io/badge/Android-8.0%2B-3DDC84?logo=android&logoColor=white" alt="Android 8.0+">
+  <a href="https://indelingdanil.github.io/MyAppVPN/"><img src="https://img.shields.io/badge/website-indelingdanil.github.io%2FMyAppVPN-4D8DFF" alt="Website"></a>
   <a href="https://t.me/myappvpn_dprog"><img src="https://img.shields.io/badge/Telegram-channel-26A5E4?logo=telegram&logoColor=white" alt="Telegram-арна"></a>
 </p>
 

@@ -1,0 +1,182 @@
+{
+  "lang": "en",
+  "dir": "ltr",
+  "langName": "English",
+  "meta": {
+    "title": "MyAppVPN — free VLESS / Xray VPN client for Android",
+    "description": "Open-source VLESS + REALITY client on Xray-core. One tap finds a working server, switches on the fly when it gets blocked. Split tunneling, DPI bypass, Android TV.",
+    "ogTitle": "MyAppVPN — one tap, a working server",
+    "keywords": "VLESS client Android, Xray Android, REALITY VPN, free VPN client, v2rayNG alternative, Hiddify alternative, split tunneling, open source VPN"
+  },
+  "nav": {
+    "features": "Features",
+    "screens": "Screenshots",
+    "faq": "FAQ",
+    "download": "Download"
+  },
+  "hero": {
+    "eyebrow": "Open source · Android 8.0+ · Android TV",
+    "title": "One tap.<br><em>A working server.</em>",
+    "sub": "MyAppVPN is a free Xray / VLESS client for Android. It finds a server that actually works, connects, and quietly moves you to another one if the current server gets blocked.",
+    "cta": "Download APK",
+    "ctaNote": "Free · no ads · no account",
+    "source": "Source code on GitHub",
+    "statusOff": "Not protected",
+    "statusSearch": "Looking for a working server…",
+    "statusOn": "Protected",
+    "connect": "CONNECT",
+    "h1": "MyAppVPN — free VLESS / Xray VPN client for Android",
+    "disconnect": "DISCONNECT"
+  },
+  "stats": [
+    {
+      "value": "30,000+",
+      "label": "downloads"
+    },
+    {
+      "value": "7",
+      "label": "interface languages"
+    },
+    {
+      "value": "0",
+      "label": "ads and trackers"
+    },
+    {
+      "value": "GPL-3.0",
+      "label": "open source"
+    }
+  ],
+  "features": {
+    "kicker": "What it does",
+    "title": "Built for networks that fight back",
+    "items": [
+      {
+        "icon": "bolt",
+        "t": "Auto mode",
+        "d": "One button. The app tests servers and connects to the fastest one that really opens Telegram — not just the one with the best ping."
+      },
+      {
+        "icon": "swap",
+        "t": "Seamless failover",
+        "d": "When a server gets blocked, traffic moves to another one on the fly, without dropping the connection."
+      },
+      {
+        "icon": "list",
+        "t": "Free servers built in",
+        "d": "An auto-updated subscription collected and checked by a bot every few hours. You can add your own subscriptions too."
+      },
+      {
+        "icon": "shield",
+        "t": "VLESS + REALITY",
+        "d": "Powered by Xray-core. Only REALITY and TLS servers make it into the built-in list."
+      },
+      {
+        "icon": "split",
+        "t": "Split tunneling",
+        "d": "Pick apps that skip the VPN — or the other way round, send only selected apps through it."
+      },
+      {
+        "icon": "wave",
+        "t": "DPI bypass",
+        "d": "Optional TLS fragmentation splits the start of the connection so simple DPI can't read the server name."
+      },
+      {
+        "icon": "node",
+        "t": "OpenFlux",
+        "d": "Your own exit on ordinary web hosting for networks where regular servers don't get through. Beta."
+      },
+      {
+        "icon": "tv",
+        "t": "Phones and TVs",
+        "d": "Works on Android TV boxes and TVs, shares the VPN over a hotspot, has a kill switch and Always-on VPN."
+      }
+    ]
+  },
+  "steps": {
+    "kicker": "How it works",
+    "title": "Three steps, no setup",
+    "items": [
+      {
+        "t": "Install the APK",
+        "d": "Download it from GitHub Releases and allow installation from unknown sources."
+      },
+      {
+        "t": "Tap Connect",
+        "d": "No accounts, no keys, no config files to paste."
+      },
+      {
+        "t": "Done",
+        "d": "The app picks a working server and keeps you on one, switching when needed."
+      }
+    ]
+  },
+  "screens": {
+    "kicker": "Screenshots",
+    "title": "Calm, glassy, one accent",
+    "caps": [
+      "Home",
+      "Servers",
+      "Settings",
+      "Statistics",
+      "Light theme"
+    ]
+  },
+  "subs": {
+    "kicker": "Use another client?",
+    "title": "Take the subscription with you",
+    "text": "The server list the app uses is public. Add it to v2rayNG, Hiddify or any client that reads VLESS subscriptions.",
+    "copy": "Copy",
+    "copied": "Copied",
+    "repo": "How the bot works"
+  },
+  "faq": {
+    "kicker": "FAQ",
+    "title": "Questions people ask",
+    "items": [
+      {
+        "q": "Is MyAppVPN free?",
+        "a": "Yes. No subscription, no ads, no account. It's a personal open-source project; donations are welcome but optional."
+      },
+      {
+        "q": "Which file should I download?",
+        "a": "<b>arm64</b> fits most phones, TV boxes and TVs. If it says \"App not installed\", take <b>arm32</b> — it's for 32-bit and older budget devices. Android 8.0 or newer is required."
+      },
+      {
+        "q": "Why isn't it on Google Play?",
+        "a": "Google Play has strict rules for VPN apps, and the app works with public servers it doesn't own. The APK on GitHub Releases is the official source; updates install over the previous version and keep your settings."
+      },
+      {
+        "q": "Are the free servers safe?",
+        "a": "They are public servers run by unknown people. They can see unencrypted traffic, so don't send passwords or banking data through them. HTTPS sites stay encrypted. For sensitive use, add your own server or subscription."
+      },
+      {
+        "q": "Which protocols are supported?",
+        "a": "VLESS with REALITY or TLS over TCP, WebSocket, gRPC, HTTPUpgrade, XHTTP and mKCP, via Xray-core. Plus OpenFlux, a separate mode with your own exit on web hosting."
+      },
+      {
+        "q": "Does it collect any data?",
+        "a": "No telemetry and no analytics. The source code is open under GPL-3.0, so anyone can check."
+      },
+      {
+        "q": "Does it work on Android TV?",
+        "a": "Yes, on TV boxes and TVs with Android 8.0+. Install the arm64 APK; most boxes support it."
+      }
+    ]
+  },
+  "download": {
+    "title": "Get MyAppVPN",
+    "text": "Latest version on GitHub Releases. Pick the file for your device:",
+    "arm64": "arm64 — most phones and TVs",
+    "arm32": "arm32 — 32-bit and older devices",
+    "button": "Open Releases",
+    "telegram": "News in Telegram"
+  },
+  "disclaimer": "An educational and research project. The author is not responsible for how the app is used. In some countries, including Russia, VPN services for bypassing blocks are restricted by law. Use at your own risk and follow the laws of your country.",
+  "footer": {
+    "source": "Source code",
+    "subs": "Subscription",
+    "telegram": "Telegram",
+    "license": "GPL-3.0",
+    "language": "Language"
+  }
+}

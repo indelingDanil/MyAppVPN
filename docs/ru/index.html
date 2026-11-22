@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="ru" dir="ltr" data-lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MyAppVPN — бесплатный VLESS / Xray VPN-клиент для Android</title>
+<meta name="description" content="VLESS + REALITY клиент на Xray-core с открытым кодом. Сам находит рабочий сервер и переключается без разрыва. Раздельное туннелирование, обход DPI, Android TV.">
+<meta name="keywords" content="VLESS клиент Android, Xray Android, REALITY VPN, бесплатный VPN клиент, альтернатива v2rayNG, альтернатива Hiddify, раздельное туннелирование, VPN с открытым кодом">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#07090d">
+<meta name="color-scheme" content="dark">
+<link rel="canonical" href="https://indelingdanil.github.io/MyAppVPN/ru/">
+<link rel="alternate" hreflang="en" href="https://indelingdanil.github.io/MyAppVPN/">
+<link rel="alternate" hreflang="ru" href="https://indelingdanil.github.io/MyAppVPN/ru/">
+<link rel="alternate" hreflang="fa" href="https://indelingdanil.github.io/MyAppVPN/fa/">
+<link rel="alternate" hreflang="zh-Hans" href="https://indelingdanil.github.io/MyAppVPN/zh/">
+<link rel="alternate" hreflang="tr" href="https://indelingdanil.github.io/MyAppVPN/tr/">
+<link rel="alternate" hreflang="kk" href="https://indelingdanil.github.io/MyAppVPN/kk/">
+<link rel="alternate" hreflang="uz" href="https://indelingdanil.github.io/MyAppVPN/uz/">
+<link rel="alternate" hreflang="x-default" href="https://indelingdanil.github.io/MyAppVPN/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="MyAppVPN">
+<meta property="og:title" content="MyAppVPN — одно касание, рабочий сервер">
+<meta property="og:description" content="VLESS + REALITY клиент на Xray-core с открытым кодом. Сам находит рабочий сервер и переключается без разрыва. Раздельное туннелирование, обход DPI, Android TV.">
+<meta property="og:url" content="https://indelingdanil.github.io/MyAppVPN/ru/">
+<meta property="og:image" content="https://indelingdanil.github.io/MyAppVPN/assets/og-ru.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:locale:alternate" content="fa_IR">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="tr_TR">
+<meta property="og:locale:alternate" content="kk_KZ">
+<meta property="og:locale:alternate" content="uz_UZ">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="MyAppVPN — одно касание, рабочий сервер">
+<meta name="twitter:description" content="VLESS + REALITY клиент на Xray-core с открытым кодом. Сам находит рабочий сервер и переключается без разрыва. Раздельное туннелирование, обход DPI, Android TV.">
+<meta name="twitter:image" content="https://indelingdanil.github.io/MyAppVPN/assets/og-ru.png">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="../assets/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@500;700;800&display=swap">
+<link rel="stylesheet" href="../assets/site.css?v=mwrp3dle">
+<link rel="preload" as="image" href="../screenshots/home-dark.png">
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"SoftwareApplication","name":"MyAppVPN","operatingSystem":"Android 8.0+","applicationCategory":"SecurityApplication","description":"VLESS + REALITY клиент на Xray-core с открытым кодом. Сам находит рабочий сервер и переключается без разрыва. Раздельное туннелирование, обход DPI, Android TV.","url":"https://indelingdanil.github.io/MyAppVPN/ru/","downloadUrl":"https://github.com/indelingDanil/MyAppVPN/releases/latest","installUrl":"https://github.com/indelingDanil/MyAppVPN/releases/latest","softwareVersion":"2.2.0.1","license":"https://www.gnu.org/licenses/gpl-3.0.html","isAccessibleForFree":true,"inLanguage":["en","ru","fa","zh-Hans","tr","kk","uz"],"screenshot":["https://indelingdanil.github.io/MyAppVPN/screenshots/home-dark.png","https://indelingdanil.github.io/MyAppVPN/screenshots/servers.png","https://indelingdanil.github.io/MyAppVPN/screenshots/settings.png","https://indelingdanil.github.io/MyAppVPN/screenshots/stats.png"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"author":{"@type":"Person","name":"indelingDanil","url":"https://github.com/indelingDanil"},"codeRepository":"https://github.com/indelingDanil/MyAppVPN-CodeBase"},{"@context":"https://schema.org","@type":"FAQPage","inLanguage":"ru","mainEntity":[{"@type":"Question","name":"MyAppVPN бесплатный?","acceptedAnswer":{"@type":"Answer","text":"Да. Без подписки, рекламы и аккаунта. Это личный проект с открытым кодом; донаты приветствуются, но не обязательны."}},{"@type":"Question","name":"Какой файл скачивать?","acceptedAnswer":{"@type":"Answer","text":"arm64 подходит для большинства телефонов, приставок и телевизоров. Если пишет «Приложение не установлено» — берите arm32: он для 32-битных и старых бюджетных устройств. Нужен Android 8.0 или новее."}},{"@type":"Question","name":"Почему его нет в Google Play?","acceptedAnswer":{"@type":"Answer","text":"У Google Play строгие правила для VPN-приложений, а приложение работает с публичными серверами, которыми не владеет. Официальный источник — APK на GitHub Releases; обновления ставятся поверх и сохраняют настройки."}},{"@type":"Question","name":"Бесплатные серверы безопасны?","acceptedAnswer":{"@type":"Answer","text":"Это публичные серверы неизвестных людей. Незашифрованный трафик им виден, поэтому не передавайте через них пароли и банковские данные. HTTPS-сайты остаются зашифрованными. Для важного добавьте свой сервер или подписку."}},{"@type":"Question","name":"Какие протоколы поддерживаются?","acceptedAnswer":{"@type":"Answer","text":"VLESS с REALITY или TLS поверх TCP, WebSocket, gRPC, HTTPUpgrade, XHTTP и mKCP — через Xray-core. Плюс OpenFlux — отдельный режим со своим выходом на веб-хостинге."}},{"@type":"Question","name":"Приложение собирает данные?","acceptedAnswer":{"@type":"Answer","text":"Нет: ни телеметрии, ни аналитики. Код открыт под GPL-3.0 — проверить может любой."}},{"@type":"Question","name":"Работает на Android TV?","acceptedAnswer":{"@type":"Answer","text":"Да, на приставках и телевизорах с Android 8.0+. Ставьте APK arm64 — его поддерживает большинство приставок."}}]}]</script>
+<script>document.documentElement.classList.add('js');</script>
+</head>
+<body>
+<a class="skip" href="#main">Возможности</a>
+<canvas id="field" aria-hidden="true"></canvas>
+<div class="grain" aria-hidden="true"></div>
+<div class="cursor-glow" aria-hidden="true"></div>
+
+<header class="top" data-top>
+  <a class="brand" href="../" aria-label="MyAppVPN"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8FB8FF"/><stop offset="1" stop-color="#3E7BFA"/></linearGradient></defs><circle cx="16" cy="16" r="14" fill="none" stroke="url(#lg)" stroke-width="2.4" stroke-dasharray="66 22" transform="rotate(-60 16 16)"/><circle cx="16" cy="16" r="5" fill="url(#lg)"/></svg><span>MyAppVPN</span></a>
+  <nav class="nav" aria-label="Main">
+    <a href="#features">Возможности</a>
+    <a href="#screens">Скриншоты</a>
+    <a href="#faq">Вопросы</a>
+  </nav>
+  <div class="top-actions">
+    <details class="lang" data-lang-menu>
+      <summary aria-label="Язык"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/></svg><span>Русский</span><svg class="i chev" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg></summary>
+      <div class="lang-menu"><a href="../" hreflang="en" lang="en" data-lang="en">English</a><a href="../ru/" hreflang="ru" lang="ru" aria-current="page" data-lang="ru">Русский</a><a href="../fa/" hreflang="fa" lang="fa" data-lang="fa">فارسی</a><a href="../zh/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh">简体中文</a><a href="../tr/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a><a href="../kk/" hreflang="kk" lang="kk" data-lang="kk">Қазақша</a><a href="../uz/" hreflang="uz" lang="uz" data-lang="uz">Oʻzbekcha</a></div>
+    </details>
+    <a class="btn btn-ghost btn-sm gh" href="https://github.com/indelingDanil/MyAppVPN-CodeBase" rel="noopener" target="_blank" aria-label="GitHub"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2Z" fill="currentColor" stroke="none"/></svg><span class="gh-stars" data-stars></span></a>
+    <a class="btn btn-primary btn-sm" href="#download" data-magnetic>Скачать</a>
+  </div>
+</header>
+
+<main id="main">
+<section class="hero" id="top">
+  <div class="hero-copy">
+    <p class="eyebrow" data-intro>Открытый код · Android 8.0+ · Android TV</p>
+    <h1 class="hero-h1" data-intro>MyAppVPN — бесплатный VLESS / Xray VPN-клиент для Android</h1>
+    <p class="hero-title"><span class="line"><span class="line-in" style="--i:0">Одно касание.</span></span><span class="line"><span class="line-in" style="--i:1"><em>Рабочий сервер.</em></span></span></p>
+    <p class="hero-sub" data-intro>MyAppVPN — бесплатный Xray / VLESS-клиент для Android. Сам находит сервер, который реально работает, подключается и незаметно переводит на другой, если текущий заблокировали.</p>
+    <div class="hero-cta" data-intro>
+      <a class="btn btn-primary btn-lg" href="https://github.com/indelingDanil/MyAppVPN/releases/latest" rel="noopener" data-magnetic data-dl><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg><span>Скачать APK</span></a>
+      <a class="btn btn-ghost btn-lg" href="https://github.com/indelingDanil/MyAppVPN-CodeBase" rel="noopener" target="_blank"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9V21c0 .3.2.6.7.5A10 10 0 0 0 12 2Z" fill="currentColor" stroke="none"/></svg><span>Исходный код на GitHub</span></a>
+    </div>
+    <p class="hero-note" data-intro>Бесплатно · без рекламы · без регистрации</p>
+  </div>
+
+  <div class="hero-visual" data-intro-visual>
+    <div class="rings" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <div class="orbit" aria-hidden="true">
+      <span class="chip" style="--a:0"><span><span>NL · reality</span></span></span>
+      <span class="chip" style="--a:1"><span><span>DE · reality</span></span></span>
+      <span class="chip" style="--a:2"><span><span>SG · reality</span></span></span>
+      <span class="chip" style="--a:3"><span><span>FI · tls</span></span></span>
+      <span class="chip" style="--a:4"><span><span>JP · reality</span></span></span>
+      <span class="chip" style="--a:5"><span><span>PL · xhttp</span></span></span>
+    </div>
+    <div class="phone" data-phone role="img" aria-label="MyAppVPN — Защищено">
+      <div class="phone-screen" data-state="off">
+        <div class="ph-status-bar"><span>9:41</span><span class="ph-icons"><i></i><i></i><i></i></span></div>
+        <div class="ph-title">MyAppVPN</div>
+        <div class="ph-state">
+          <span data-s="off">Не защищено</span>
+          <span data-s="search">Ищем рабочий сервер…</span>
+          <span data-s="on">Защищено</span>
+        </div>
+        <div class="ph-seg"><span class="on">⚡ Auto</span><span>📍 Manual</span></div>
+        <div class="ph-server"><b class="cc" data-cc>SG</b><span data-srv>reality-0031</span><em data-ping>84 ms</em></div>
+        <div class="ph-btn-wrap">
+          <svg class="ph-arc" viewBox="0 0 200 200" aria-hidden="true"><circle cx="100" cy="100" r="94" pathLength="100"/></svg>
+          <button class="ph-btn" type="button" tabindex="-1" aria-hidden="true"><svg class="i pw" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v8"/><path d="M6.3 6.3a8 8 0 1 0 11.4 0"/></svg><span class="lbl-off">ПОДКЛЮЧИТЬ</span><span class="lbl-on">ОТКЛЮЧИТЬ</span></button>
+        </div>
+        <div class="ph-speed"><span>↓ <b data-down>0.0</b> MB/s</span><span>↑ <b data-up>0.0</b> MB/s</span></div>
+        <nav class="ph-nav" aria-hidden="true"><span class="on"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m3 11 9-7 9 7v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1v-9Z"/></svg></span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 3.8 5.6 3.8 9s-1.3 6.4-3.8 9c-2.5-2.6-3.8-5.6-3.8-9S9.5 5.6 12 3Z"/></svg></span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20V10M12 20V4M18 20v-7"/></svg></span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.1a2 2 0 1 1-2.8 2.8l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 1.5V21a2 2 0 1 1-4 0v-.1a1.7 1.7 0 0 0-1.1-1.5 1.7 1.7 0 0 0-1.8.3l-.1.1a2 2 0 1 1-2.8-2.8l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 1 1 0-4h.1a1.7 1.7 0 0 0 1.5-1.1 1.7 1.7 0 0 0-.3-1.8l-.1-.1a2 2 0 1 1 2.8-2.8l.1.1a1.7 1.7 0 0 0 1.8.3H9a1.7 1.7 0 0 0 1-1.5V3a2 2 0 1 1 4 0v.1a1.7 1.7 0 0 0 1 1.5 1.7 1.7 0 0 0 1.8-.3l.1-.1a2 2 0 1 1 2.8 2.8l-.1.1a1.7 1.7 0 0 0-.3 1.8V9a1.7 1.7 0 0 0 1.5 1H21a2 2 0 1 1 0 4h-.1a1.7 1.7 0 0 0-1.5 1Z"/></svg></span><span><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10Z"/></svg></span></nav>
+      </div>
+    </div>
+  </div>
+
+  <a class="scroll-cue" href="#stats" aria-label="Возможности"><span></span></a>
+</section>
+
+<section class="stats" id="stats">
+  <div class="stat" data-reveal><b data-count="30 000+">30 000+</b><span>скачиваний</span></div><div class="stat" data-reveal><b data-count="7">7</b><span>языков интерфейса</span></div><div class="stat" data-reveal><b data-count="0">0</b><span>рекламы и трекеров</span></div><div class="stat" data-reveal><b data-count="GPL-3.0">GPL-3.0</b><span>открытый код</span></div>
+</section>
+
+<div class="marquee" aria-hidden="true"><div class="marquee-track"><span>VLESS</span><i>✦</i><span>REALITY</span><i>✦</i><span>Xray-core</span><i>✦</i><span>XHTTP</span><i>✦</i><span>gRPC</span><i>✦</i><span>WebSocket</span><i>✦</i><span>TLS fragmentation</span><i>✦</i><span>Split tunneling</span><i>✦</i><span>Kill switch</span><i>✦</i><span>Android TV</span><i>✦</i><span>OpenFlux</span><i>✦</i><span>GPL-3.0</span><i>✦</i><span>VLESS</span><i>✦</i><span>REALITY</span><i>✦</i><span>Xray-core</span><i>✦</i><span>XHTTP</span><i>✦</i><span>gRPC</span><i>✦</i><span>WebSocket</span><i>✦</i><span>TLS fragmentation</span><i>✦</i><span>Split tunneling</span><i>✦</i><span>Kill switch</span><i>✦</i><span>Android TV</span><i>✦</i><span>OpenFlux</span><i>✦</i><span>GPL-3.0</span><i>✦</i></div></div>
+
+<section class="features" id="features">
+  <header class="sec-head">
+    <p class="kicker" data-reveal>Что умеет</p>
+    <h2 data-reveal>Сделан для сетей, где режут</h2>
+  </header>
+  <div class="bento">
+    <article class="card card-0" data-card>
+      <div class="card-glow" aria-hidden="true"></div>
+      <span class="card-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8Z"/></svg></span>
+      <h3>Режим «Авто»</h3>
+      <p>Одна кнопка. Приложение проверяет серверы и подключается к самому быстрому из тех, через которые реально открывается Telegram, а не просто с лучшим пингом.</p>
+    </article><article class="card card-1" data-card>
+      <div class="card-glow" aria-hidden="true"></div>
+      <span class="card-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h13l-3-3M20 17H7l3 3"/></svg></span>
+      <h3>Переключение без разрыва</h3>
+      <p>Если сервер заблокировали, трафик на лету уходит на другой — соединение не рвётся.</p>
+    </article><article class="card card-2" data-card>
+      <div class="card-glow" aria-hidden="true"></div>
+      <span class="card-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h12M8 12h12M8 18h12"/><circle cx="4" cy="6" r="1"/><circle cx="4" cy="12" r="1"/><circle cx="4" cy="18" r="1"/></svg></span>
+      <h3>Бесплатные серверы внутри</h3>
+      <p>Встроенная подписка, которую бот собирает и проверяет каждые несколько часов. Можно добавить и свои подписки.</p>
+    </article><article class="card card-3" data-card>
+      <div class="card-glow" aria-hidden="true"></div>
+      <span class="card-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg></span>
+      <h3>VLESS + REALITY</h3>
+      <p>Работает на Xray-core. Во встроенный список попадают только серверы с REALITY и TLS.</p>
+    </article><article class="card card-4" data-card>
+      <div class="card-glow" aria-hidden="true"></div>
+      <span class="card-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21v-7M12 14 6 4M12 14l6-10M6 4H3M6 4v3M18 4h3M18 4v3"/></svg></span>
+      <h3>Раздельное туннелирование</h3>
+      <p>Выберите приложения, которые идут мимо VPN, — или наоборот, пускайте через VPN только выбранные.</p>
+    </article><article class="card card-5" data-card>
+      <div class="card-glow" aria-hidden="true"></div>
+      <span class="card-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l2-6 3 12 3-9 2 3h5"/></svg></span>
+      <h3>Обход DPI</h3>
+      <p>Фрагментация TLS по желанию: начало соединения дробится, и простой DPI не может прочитать имя сервера.</p>
+    </article><article class="card card-6" data-card>
+      <div class="card-glow" aria-hidden="true"></div>
+      <span class="card-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><circle cx="4" cy="5" r="2"/><circle cx="20" cy="5" r="2"/><circle cx="12" cy="21" r="1.5"/><path d="m6 6 4 4M18 6l-4 4M12 15v4.5"/></svg></span>
+      <h3>OpenFlux</h3>
+      <p>Свой выход на обычном веб-хостинге — для сетей, где обычные серверы не проходят. Бета.</p>
+    </article><article class="card card-7" data-card>
+      <div class="card-glow" aria-hidden="true"></div>
+      <span class="card-ico"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span>
+      <h3>Телефоны и ТВ</h3>
+      <p>Работает на приставках и телевизорах с Android TV, раздаёт VPN через точку доступа, есть kill switch и постоянный VPN.</p>
+    </article>
+  </div>
+</section>
+
+<section class="steps" id="how">
+  <header class="sec-head">
+    <p class="kicker" data-reveal>Как это работает</p>
+    <h2 data-reveal>Три шага, без настроек</h2>
+  </header>
+  <ol class="steps-list" data-steps>
+    <svg class="steps-line" aria-hidden="true" preserveAspectRatio="none" viewBox="0 0 4 100"><line x1="2" y1="0" x2="2" y2="100" pathLength="1"/></svg>
+    <li class="step" data-step><span class="step-n">1</span><div><h3>Установите APK</h3><p>Скачайте с GitHub Releases и разрешите установку из неизвестных источников.</p></div></li><li class="step" data-step><span class="step-n">2</span><div><h3>Нажмите «Подключить»</h3><p>Без аккаунтов, ключей и вставки конфигов.</p></div></li><li class="step" data-step><span class="step-n">3</span><div><h3>Готово</h3><p>Приложение выбирает рабочий сервер и держит соединение, переключаясь, когда нужно.</p></div></li>
+  </ol>
+</section>
+
+<section class="screens" id="screens" data-screens>
+  <div class="screens-pin">
+    <header class="sec-head">
+      <p class="kicker" data-reveal>Скриншоты</p>
+      <h2 data-reveal>Спокойно, стекло, один акцент</h2>
+    </header>
+    <div class="screens-track" data-track>
+      <figure class="shot">
+        <div class="shot-frame"><img src="../screenshots/home-dark.png" width="360" height="740" loading="eager" decoding="async" alt="MyAppVPN — Главная"></div>
+        <figcaption>Главная</figcaption>
+      </figure><figure class="shot">
+        <div class="shot-frame"><img src="../screenshots/servers.png" width="360" height="740" loading="lazy" decoding="async" alt="MyAppVPN — Серверы"></div>
+        <figcaption>Серверы</figcaption>
+      </figure><figure class="shot">
+        <div class="shot-frame"><img src="../screenshots/settings.png" width="360" height="740" loading="lazy" decoding="async" alt="MyAppVPN — Настройки"></div>
+        <figcaption>Настройки</figcaption>
+      </figure><figure class="shot">
+        <div class="shot-frame"><img src="../screenshots/stats.png" width="360" height="740" loading="lazy" decoding="async" alt="MyAppVPN — Статистика"></div>
+        <figcaption>Статистика</figcaption>
+      </figure><figure class="shot">
+        <div class="shot-frame"><img src="../screenshots/home-light.png" width="360" height="740" loading="lazy" decoding="async" alt="MyAppVPN — Светлая тема"></div>
+        <figcaption>Светлая тема</figcaption>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<section class="subs" id="subscription">
+  <div class="subs-card" data-reveal>
+    <p class="kicker">Пользуетесь другим клиентом?</p>
+    <h2>Заберите подписку с собой</h2>
+    <p>Список серверов, который использует приложение, открыт. Добавьте его в v2rayNG, Hiddify или любой клиент, который читает VLESS-подписки.</p>
+    <div class="copy-row">
+      <code data-copy-src>https://cdn.jsdelivr.net/gh/indelingDanil/MyAppVPN-subs@output/vless.txt</code>
+      <button class="btn btn-primary btn-sm" type="button" data-copy data-copied="Скопировано"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15V5a2 2 0 0 1 2-2h8"/></svg><span>Копировать</span></button>
+    </div>
+    <a class="link" href="https://github.com/indelingDanil/MyAppVPN-subs" rel="noopener" target="_blank">Как устроен бот <svg class="i arr" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14m0 0-6-6m6 6-6 6"/></svg></a>
+  </div>
+</section>
+
+<section class="faq" id="faq">
+  <header class="sec-head">
+    <p class="kicker" data-reveal>Вопросы</p>
+    <h2 data-reveal>Что обычно спрашивают</h2>
+  </header>
+  <div class="faq-list">
+    <details class="qa" data-reveal><summary><h3>MyAppVPN бесплатный?</h3><span class="qa-x" aria-hidden="true"></span></summary><div class="qa-a"><p>Да. Без подписки, рекламы и аккаунта. Это личный проект с открытым кодом; донаты приветствуются, но не обязательны.</p></div></details><details class="qa" data-reveal><summary><h3>Какой файл скачивать?</h3><span class="qa-x" aria-hidden="true"></span></summary><div class="qa-a"><p><b>arm64</b> подходит для большинства телефонов, приставок и телевизоров. Если пишет «Приложение не установлено» — берите <b>arm32</b>: он для 32-битных и старых бюджетных устройств. Нужен Android 8.0 или новее.</p></div></details><details class="qa" data-reveal><summary><h3>Почему его нет в Google Play?</h3><span class="qa-x" aria-hidden="true"></span></summary><div class="qa-a"><p>У Google Play строгие правила для VPN-приложений, а приложение работает с публичными серверами, которыми не владеет. Официальный источник — APK на GitHub Releases; обновления ставятся поверх и сохраняют настройки.</p></div></details><details class="qa" data-reveal><summary><h3>Бесплатные серверы безопасны?</h3><span class="qa-x" aria-hidden="true"></span></summary><div class="qa-a"><p>Это публичные серверы неизвестных людей. Незашифрованный трафик им виден, поэтому не передавайте через них пароли и банковские данные. HTTPS-сайты остаются зашифрованными. Для важного добавьте свой сервер или подписку.</p></div></details><details class="qa" data-reveal><summary><h3>Какие протоколы поддерживаются?</h3><span class="qa-x" aria-hidden="true"></span></summary><div class="qa-a"><p>VLESS с REALITY или TLS поверх TCP, WebSocket, gRPC, HTTPUpgrade, XHTTP и mKCP — через Xray-core. Плюс OpenFlux — отдельный режим со своим выходом на веб-хостинге.</p></div></details><details class="qa" data-reveal><summary><h3>Приложение собирает данные?</h3><span class="qa-x" aria-hidden="true"></span></summary><div class="qa-a"><p>Нет: ни телеметрии, ни аналитики. Код открыт под GPL-3.0 — проверить может любой.</p></div></details><details class="qa" data-reveal><summary><h3>Работает на Android TV?</h3><span class="qa-x" aria-hidden="true"></span></summary><div class="qa-a"><p>Да, на приставках и телевизорах с Android 8.0+. Ставьте APK arm64 — его поддерживает большинство приставок.</p></div></details>
+  </div>
+</section>
+
+<section class="download" id="download">
+  <div class="dl-card" data-reveal>
+    <div class="dl-rings" aria-hidden="true"><i></i><i></i><i></i></div>
+    <h2>Скачать MyAppVPN</h2>
+    <p>Последняя версия — на GitHub Releases. Выберите файл под своё устройство:</p>
+    <ul class="dl-files">
+      <li><b>arm64</b><span>большинство телефонов и ТВ</span></li>
+      <li><b>arm32</b><span>32-битные и старые устройства</span></li>
+    </ul>
+    <div class="dl-cta">
+      <a class="btn btn-primary btn-lg" href="https://github.com/indelingDanil/MyAppVPN/releases/latest" rel="noopener" data-magnetic><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12m0 0-5-5m5 5 5-5M4 21h16"/></svg><span>Открыть Releases</span></a>
+      <a class="btn btn-ghost btn-lg" href="https://t.me/myappvpn_dprog" rel="noopener" target="_blank"><svg class="i" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m21 4-18 7 6 2 2 6 3-4 5 4 2-15Z"/><path d="m9 13 8-6"/></svg><span>Новости в Telegram</span></a>
+    </div>
+    <p class="dl-meta">v2.2.0.1 · Android 8.0+ · GPL-3.0</p>
+  </div>
+</section>
+</main>
+
+<footer class="foot">
+  <div class="foot-top">
+    <a class="brand" href="../"><svg class="logo-mark" viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8FB8FF"/><stop offset="1" stop-color="#3E7BFA"/></linearGradient></defs><circle cx="16" cy="16" r="14" fill="none" stroke="url(#lg)" stroke-width="2.4" stroke-dasharray="66 22" transform="rotate(-60 16 16)"/><circle cx="16" cy="16" r="5" fill="url(#lg)"/></svg><span>MyAppVPN</span></a>
+    <nav class="foot-links">
+      <a href="https://github.com/indelingDanil/MyAppVPN-CodeBase" rel="noopener" target="_blank">Исходный код</a>
+      <a href="https://github.com/indelingDanil/MyAppVPN-subs" rel="noopener" target="_blank">Подписка</a>
+      <a href="https://t.me/myappvpn_dprog" rel="noopener" target="_blank">Telegram</a>
+      <a href="https://github.com/indelingDanil/MyAppVPN/releases/latest" rel="noopener">Releases</a>
+    </nav>
+  </div>
+  <nav class="foot-langs" aria-label="Язык"><a href="../" hreflang="en" lang="en" data-lang="en">English</a><a href="../ru/" hreflang="ru" lang="ru" aria-current="page" data-lang="ru">Русский</a><a href="../fa/" hreflang="fa" lang="fa" data-lang="fa">فارسی</a><a href="../zh/" hreflang="zh-Hans" lang="zh-Hans" data-lang="zh">简体中文</a><a href="../tr/" hreflang="tr" lang="tr" data-lang="tr">Türkçe</a><a href="../kk/" hreflang="kk" lang="kk" data-lang="kk">Қазақша</a><a href="../uz/" hreflang="uz" lang="uz" data-lang="uz">Oʻzbekcha</a></nav>
+  <p class="disclaimer">⚠️ Учебный и исследовательский проект. Автор не несёт ответственности за то, как используется приложение. В ряде стран, включая Россию, VPN-сервисы для обхода блокировок ограничены законом. Используйте на свой страх и риск и соблюдайте законы своей страны.</p>
+  <p class="foot-copy">MyAppVPN · GPL-3.0</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js" defer></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.3.4/dist/lenis.min.js" defer></script>
+<script src="../assets/site.js?v=mwrp3dle" defer></script>
+</body>
+</html>

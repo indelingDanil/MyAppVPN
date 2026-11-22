@@ -1,0 +1,182 @@
+{
+  "lang": "tr",
+  "dir": "ltr",
+  "langName": "Türkçe",
+  "meta": {
+    "title": "MyAppVPN — Android için ücretsiz VLESS / Xray VPN istemcisi",
+    "description": "Xray-core tabanlı açık kaynak Android VPN istemcisi: VLESS + REALITY, tek dokunuşla otomatik sunucu, kesintisiz geçiş, bölünmüş tünel, DPI atlatma, Android TV.",
+    "ogTitle": "MyAppVPN — tek dokunuş, çalışan bir sunucu",
+    "keywords": "ücretsiz VPN, ücretsiz VPN uygulaması Android, VLESS istemcisi Android, Xray Android, REALITY VPN, v2rayNG alternatifi, Hiddify alternatifi, bölünmüş tünel, açık kaynak VPN"
+  },
+  "nav": {
+    "features": "Özellikler",
+    "screens": "Ekran görüntüleri",
+    "faq": "SSS",
+    "download": "İndir"
+  },
+  "hero": {
+    "eyebrow": "Açık kaynak · Android 8.0+ · Android TV",
+    "title": "Tek dokunuş.<br><em>Çalışan bir sunucu.</em>",
+    "sub": "MyAppVPN, Android için ücretsiz bir Xray / VLESS istemcisidir. Gerçekten çalışan bir sunucu bulur, bağlanır ve mevcut sunucu engellenirse sizi sessizce başka birine geçirir.",
+    "cta": "APK indir",
+    "ctaNote": "Ücretsiz · reklamsız · hesap gerekmez",
+    "source": "GitHub'da kaynak kod",
+    "statusOff": "Korunmuyor",
+    "statusSearch": "Çalışan bir sunucu aranıyor…",
+    "statusOn": "Korunuyor",
+    "connect": "BAĞLAN",
+    "h1": "MyAppVPN — Android için ücretsiz VLESS / Xray VPN istemcisi",
+    "disconnect": "BAĞLANTIYI KES"
+  },
+  "stats": [
+    {
+      "value": "30.000+",
+      "label": "indirme"
+    },
+    {
+      "value": "7",
+      "label": "arayüz dili"
+    },
+    {
+      "value": "0",
+      "label": "reklam ve izleyici"
+    },
+    {
+      "value": "GPL-3.0",
+      "label": "açık kaynak"
+    }
+  ],
+  "features": {
+    "kicker": "Neler yapar",
+    "title": "Engelleyen ağlar için tasarlandı",
+    "items": [
+      {
+        "icon": "bolt",
+        "t": "Otomatik mod",
+        "d": "Tek bir düğme. Uygulama sunucuları test eder ve Telegram'ı gerçekten açabilen en hızlı sunucuya bağlanır — sadece pingi en iyi olana değil."
+      },
+      {
+        "icon": "swap",
+        "t": "Kesintisiz geçiş",
+        "d": "Bir sunucu engellendiğinde trafik anında başka bir sunucuya aktarılır, bağlantı kopmaz."
+      },
+      {
+        "icon": "list",
+        "t": "Dahili ücretsiz sunucular",
+        "d": "Bir botun birkaç saatte bir toplayıp kontrol ettiği, otomatik güncellenen bir abonelik. Kendi aboneliklerinizi de ekleyebilirsiniz."
+      },
+      {
+        "icon": "shield",
+        "t": "VLESS + REALITY",
+        "d": "Xray-core ile çalışır. Dahili listeye yalnızca REALITY ve TLS sunucuları girer."
+      },
+      {
+        "icon": "split",
+        "t": "Bölünmüş tünel",
+        "d": "VPN'i atlayacak uygulamaları seçin — ya da tam tersi, yalnızca seçtiğiniz uygulamaları VPN'den geçirin."
+      },
+      {
+        "icon": "wave",
+        "t": "DPI atlatma",
+        "d": "İsteğe bağlı TLS parçalama, bağlantının başlangıcını böler; böylece basit DPI sunucu adını okuyamaz."
+      },
+      {
+        "icon": "node",
+        "t": "OpenFlux",
+        "d": "Normal sunucuların geçemediği ağlar için sıradan bir web hostingde kendi çıkış noktanız. Beta."
+      },
+      {
+        "icon": "tv",
+        "t": "Telefon ve TV",
+        "d": "Android TV kutularında ve televizyonlarda çalışır, VPN'i hotspot üzerinden paylaşır; kill switch ve Her zaman açık VPN desteği vardır."
+      }
+    ]
+  },
+  "steps": {
+    "kicker": "Nasıl çalışır",
+    "title": "Üç adım, kurulum yok",
+    "items": [
+      {
+        "t": "APK'yı yükleyin",
+        "d": "GitHub Releases'tan indirin ve bilinmeyen kaynaklardan yüklemeye izin verin."
+      },
+      {
+        "t": "BAĞLAN'a dokunun",
+        "d": "Hesap yok, anahtar yok, yapıştırılacak yapılandırma dosyası yok."
+      },
+      {
+        "t": "Hazır",
+        "d": "Uygulama çalışan bir sunucu seçer, bağlantınızı korur ve gerektiğinde sunucu değiştirir."
+      }
+    ]
+  },
+  "screens": {
+    "kicker": "Ekran görüntüleri",
+    "title": "Sakin, cam efekti, tek vurgu rengi",
+    "caps": [
+      "Ana Sayfa",
+      "Sunucular",
+      "Ayarlar",
+      "İstatistik",
+      "Açık tema"
+    ]
+  },
+  "subs": {
+    "kicker": "Başka bir istemci mi kullanıyorsunuz?",
+    "title": "Aboneliği yanınızda götürün",
+    "text": "Uygulamanın kullandığı sunucu listesi herkese açıktır. v2rayNG, Hiddify veya VLESS aboneliklerini okuyabilen herhangi bir istemciye ekleyin.",
+    "copy": "Kopyala",
+    "copied": "Kopyalandı",
+    "repo": "Bot nasıl çalışır"
+  },
+  "faq": {
+    "kicker": "SSS",
+    "title": "Sık sorulan sorular",
+    "items": [
+      {
+        "q": "MyAppVPN ücretsiz mi?",
+        "a": "Evet. Ücretli abonelik yok, reklam yok, hesap yok. Kişisel bir açık kaynak projesidir; bağışlar memnuniyetle karşılanır ama zorunlu değildir."
+      },
+      {
+        "q": "Hangi dosyayı indirmeliyim?",
+        "a": "<b>arm64</b> çoğu telefona, TV kutusuna ve televizyona uygundur. \"Uygulama yüklenmedi\" hatası alırsanız <b>arm32</b>'yi indirin — 32 bit ve eski, uygun fiyatlı cihazlar içindir. Android 8.0 veya üzeri gerekir."
+      },
+      {
+        "q": "Neden Google Play'de yok?",
+        "a": "Google Play'in VPN uygulamaları için katı kuralları var ve uygulama, sahibi olmadığı herkese açık sunucularla çalışıyor. Resmi kaynak GitHub Releases'taki APK'dır; güncellemeler önceki sürümün üzerine yüklenir ve ayarlarınız korunur."
+      },
+      {
+        "q": "Ücretsiz sunucular güvenli mi?",
+        "a": "Bunlar kim olduğu bilinmeyen kişilerin işlettiği herkese açık sunuculardır. Şifrelenmemiş trafiği görebilirler, bu yüzden şifrelerinizi veya banka bilgilerinizi bu sunucular üzerinden göndermeyin. HTTPS siteleri şifreli kalır. Hassas işler için kendi sunucunuzu veya aboneliğinizi ekleyin."
+      },
+      {
+        "q": "Hangi protokoller destekleniyor?",
+        "a": "Xray-core üzerinden TCP, WebSocket, gRPC, HTTPUpgrade, XHTTP ve mKCP ile REALITY veya TLS kullanan VLESS. Ayrıca web hostingde kendi çıkış noktanızı kullanan ayrı bir mod olan OpenFlux."
+      },
+      {
+        "q": "Veri topluyor mu?",
+        "a": "Hayır. Telemetri de analitik de yok. Kaynak kod GPL-3.0 lisansıyla açık, isteyen herkes kontrol edebilir."
+      },
+      {
+        "q": "Android TV'de çalışıyor mu?",
+        "a": "Evet, Android 8.0+ yüklü TV kutularında ve televizyonlarda. arm64 APK'yı yükleyin; çoğu kutu bunu destekler."
+      }
+    ]
+  },
+  "download": {
+    "title": "MyAppVPN'i edinin",
+    "text": "En son sürüm GitHub Releases'ta. Cihazınıza uygun dosyayı seçin:",
+    "arm64": "arm64 — çoğu telefon ve TV",
+    "arm32": "arm32 — 32 bit ve eski cihazlar",
+    "button": "Releases'ı aç",
+    "telegram": "Telegram'da haberler"
+  },
+  "disclaimer": "Eğitim ve araştırma amaçlı bir projedir. Yazar, uygulamanın nasıl kullanıldığından sorumlu değildir. Rusya dahil bazı ülkelerde engelleri aşmaya yönelik VPN hizmetleri yasalarla kısıtlanmıştır. Kullanım riski size aittir; lütfen ülkenizin yasalarına uyun.",
+  "footer": {
+    "source": "Kaynak kod",
+    "subs": "Abonelik",
+    "telegram": "Telegram",
+    "license": "GPL-3.0",
+    "language": "Dil"
+  }
+}

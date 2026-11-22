@@ -1,0 +1,182 @@
+{
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "langName": "简体中文",
+  "meta": {
+    "title": "MyAppVPN — 免费 Android VLESS / Xray VPN 客户端",
+    "description": "基于 Xray-core 的开源 Android VPN 客户端：VLESS + REALITY，一键自动选择服务器，无缝切换，分应用代理，绕过 DPI，支持 Android TV。免费，无广告，无遥测。",
+    "ogTitle": "MyAppVPN — 一键连接，可用服务器",
+    "keywords": "免费 VPN 客户端, VLESS 客户端, VLESS 安卓客户端, Xray 安卓, REALITY VPN, v2rayNG 替代, Hiddify 替代, 分应用代理, 开源 VPN"
+  },
+  "nav": {
+    "features": "功能",
+    "screens": "截图",
+    "faq": "常见问题",
+    "download": "下载"
+  },
+  "hero": {
+    "eyebrow": "开源 · Android 8.0+ · Android TV",
+    "title": "一键连接。<br><em>直达可用服务器。</em>",
+    "sub": "MyAppVPN 是一款免费的 Android Xray / VLESS 客户端。它会自己找到真正可用的服务器并连接；当前服务器被封锁时，会悄悄把你切换到另一台。",
+    "cta": "下载 APK",
+    "ctaNote": "免费 · 无广告 · 无需账号",
+    "source": "GitHub 上的源代码",
+    "statusOff": "未受保护",
+    "statusSearch": "正在寻找可用服务器…",
+    "statusOn": "已受保护",
+    "connect": "连接",
+    "h1": "MyAppVPN — 免费 Android VLESS / Xray VPN 客户端",
+    "disconnect": "断开"
+  },
+  "stats": [
+    {
+      "value": "30,000+",
+      "label": "次下载"
+    },
+    {
+      "value": "7",
+      "label": "种界面语言"
+    },
+    {
+      "value": "0",
+      "label": "广告与追踪器"
+    },
+    {
+      "value": "GPL-3.0",
+      "label": "开源"
+    }
+  ],
+  "features": {
+    "kicker": "能做什么",
+    "title": "专为封锁严重的网络打造",
+    "items": [
+      {
+        "icon": "bolt",
+        "t": "自动模式",
+        "d": "只需一个按钮。应用会测试各个服务器，并连接到真正能打开 Telegram 的最快服务器，而不只是延迟最低的那台。"
+      },
+      {
+        "icon": "swap",
+        "t": "无缝切换",
+        "d": "服务器被封锁时，流量会即时转到另一台服务器，连接不会中断。"
+      },
+      {
+        "icon": "list",
+        "t": "内置免费服务器",
+        "d": "内置订阅自动更新，由机器人每隔几小时收集并检测一次。也可以添加你自己的订阅。"
+      },
+      {
+        "icon": "shield",
+        "t": "VLESS + REALITY",
+        "d": "基于 Xray-core。只有 REALITY 和 TLS 服务器才会进入内置列表。"
+      },
+      {
+        "icon": "split",
+        "t": "分应用代理",
+        "d": "选择不走 VPN 的应用，或者反过来，只让选中的应用走 VPN。"
+      },
+      {
+        "icon": "wave",
+        "t": "绕过 DPI",
+        "d": "可选的 TLS 分片会拆分连接的开头部分，让简单的 DPI 无法读取服务器名称。"
+      },
+      {
+        "icon": "node",
+        "t": "OpenFlux",
+        "d": "在普通网站主机上搭建自己的出口，适用于普通服务器无法连通的网络。测试版。"
+      },
+      {
+        "icon": "tv",
+        "t": "手机和电视",
+        "d": "支持 Android TV 盒子和电视，可通过热点共享 VPN，提供断网保护和始终开启的 VPN。"
+      }
+    ]
+  },
+  "steps": {
+    "kicker": "使用方法",
+    "title": "三步搞定，无需配置",
+    "items": [
+      {
+        "t": "安装 APK",
+        "d": "从 GitHub Releases 下载，并允许安装未知来源的应用。"
+      },
+      {
+        "t": "点击“连接”",
+        "d": "无需账号、密钥，也不用粘贴配置文件。"
+      },
+      {
+        "t": "完成",
+        "d": "应用会选择可用的服务器并保持连接，必要时自动切换。"
+      }
+    ]
+  },
+  "screens": {
+    "kicker": "截图",
+    "title": "安静、玻璃质感、单一强调色",
+    "caps": [
+      "首页",
+      "服务器",
+      "设置",
+      "统计",
+      "浅色主题"
+    ]
+  },
+  "subs": {
+    "kicker": "在用其他客户端？",
+    "title": "订阅可以带走",
+    "text": "应用使用的服务器列表是公开的。可以把它添加到 v2rayNG、Hiddify 或任何支持 VLESS 订阅的客户端。",
+    "copy": "复制",
+    "copied": "已复制",
+    "repo": "机器人如何工作"
+  },
+  "faq": {
+    "kicker": "常见问题",
+    "title": "大家常问的问题",
+    "items": [
+      {
+        "q": "MyAppVPN 免费吗？",
+        "a": "是的。无需付费订阅，没有广告，不用注册账号。这是一个个人开源项目，欢迎捐助，但不是必须的。"
+      },
+      {
+        "q": "应该下载哪个文件？",
+        "a": "<b>arm64</b> 适用于大多数手机、电视盒子和电视。如果提示“未安装应用”，请改用 <b>arm32</b>，它适用于 32 位设备和较旧的低价设备。需要 Android 8.0 或更高版本。"
+      },
+      {
+        "q": "为什么不在 Google Play 上架？",
+        "a": "Google Play 对 VPN 应用有严格的规定，而本应用使用的是并非自己拥有的公共服务器。官方来源是 GitHub Releases 上的 APK；更新可直接覆盖安装，并保留你的设置。"
+      },
+      {
+        "q": "免费服务器安全吗？",
+        "a": "它们是由身份不明的人运营的公共服务器，能看到未加密的流量，所以不要通过它们发送密码或银行信息。HTTPS 网站仍然是加密的。如有敏感用途，请添加你自己的服务器或订阅。"
+      },
+      {
+        "q": "支持哪些协议？",
+        "a": "通过 Xray-core 支持 VLESS（REALITY 或 TLS），传输方式包括 TCP、WebSocket、gRPC、HTTPUpgrade、XHTTP 和 mKCP。另有 OpenFlux，一种在网站主机上使用自建出口的独立模式。"
+      },
+      {
+        "q": "会收集数据吗？",
+        "a": "不会。没有遥测，也没有统计分析。源代码以 GPL-3.0 开源，任何人都可以检查。"
+      },
+      {
+        "q": "支持 Android TV 吗？",
+        "a": "支持，适用于 Android 8.0+ 的电视盒子和电视。请安装 arm64 版 APK，大多数盒子都支持。"
+      }
+    ]
+  },
+  "download": {
+    "title": "获取 MyAppVPN",
+    "text": "最新版本在 GitHub Releases。请选择适合你设备的文件：",
+    "arm64": "arm64 — 大多数手机和电视",
+    "arm32": "arm32 — 32 位及较旧的设备",
+    "button": "打开 Releases",
+    "telegram": "Telegram 新闻频道"
+  },
+  "disclaimer": "本项目仅用于教育和研究目的。作者不对应用的使用方式承担任何责任。在包括俄罗斯在内的一些国家，用于绕过封锁的 VPN 服务受到法律限制。使用风险由你自行承担，请遵守你所在国家的法律。",
+  "footer": {
+    "source": "源代码",
+    "subs": "订阅",
+    "telegram": "Telegram",
+    "license": "GPL-3.0",
+    "language": "语言"
+  }
+}
