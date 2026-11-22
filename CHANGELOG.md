@@ -2,10 +2,6 @@
 
 All notable changes to [MyAppVPN](README.md), newest first. APKs for every version are on the [Releases](https://github.com/indelingDanil/MyAppVPN/releases) page.
 
-## v2.2.0.2 — 2026-11-22
-
-- **Partner card (YepShop)** — Steam, game and service top-ups — on the Home screen (can be hidden for good with ✕) and in the Support tab. A plain link: no ad SDK, no trackers.
-
 ## v2.2.0.1 — 2026-11-21
 
 - **New UI languages:** Persian, Simplified Chinese, Turkish, Kazakh and Uzbek (seven with Russian and English).
