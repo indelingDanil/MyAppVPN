@@ -2,6 +2,13 @@
 
 All notable changes to [MyAppVPN](README.md), newest first. APKs for every version are on the [Releases](https://github.com/indelingDanil/MyAppVPN/releases) page.
 
+## v2.3.0 — 2026-11-22
+
+- **Hysteria2** servers (`hysteria2://`, `hy2://`) from subscriptions: Auto, manual pick, seamless switching. QUIC/UDP — where UDP is blocked they fail their check and Auto picks VLESS.
+- **"Verified paid subscriptions"** page (Home and Support tab): paid services the author tested with MyAppVPN, plus how to add a bought subscription. Referral links; the list updates without app releases from a plain file on GitHub, no trackers.
+- **One built-in subscription** ("MyAppVPN (auto-collected)"); zieng2 and igareck removed from the list — they are already part of it. On whitelist-only networks a fallback list from Russian mirrors is used automatically.
+- **Background server refresh fixed** — runs hourly in the background, not only while the app is open.
+
 ## v2.2.0.1 — 2026-11-21
 
 - **New UI languages:** Persian, Simplified Chinese, Turkish, Kazakh and Uzbek (seven with Russian and English).
