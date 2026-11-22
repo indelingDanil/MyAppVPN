@@ -110,11 +110,13 @@ https://cdn.jsdelivr.net/gh/indelingDanil/MyAppVPN-subs@output/vless.txt
 
 👉 [CloudTips арқылы донат (RUB)](https://pay.cloudtips.ru/p/8c90d7a5)
 
-👉 USDT (TRC20): `TB3Qn2guzVdj93kUi43KG8gQY6mruGZbNG`
+👉 USDT (TON): `UQBi78BaJNXuEXHrP-OhuFAIf29yvpIo1s2agHiTQPB-xWbE`
 
-👉 BTC (BTC): `16Bs15Mpu2HAYyVjgiLdwQC1yzLpbf2qyv`
+👉 USDT (TRC20): `TYaGhM39zKXS3g177R6VvBhNLkbsFgYAHj`
 
-👉 ETH (ERC20): `0x3704ecc83ea8b6a852d63dc82c0badcd761d8e6f`
+👉 BTC (BTC): `bc1qjrtd68le7dcd2h2psqcgmp4nvcp9p092m7ew8z`
+
+👉 USDT (BEP20): `0xB65bb82aB8f85db12b3DEfebE2a4a0b210f097d6`
 
 Басқаша да көмектесуге болады: қате туралы хабарлама → [#4](https://github.com/indelingDanil/MyAppVPN/issues/4), идеялар → [#5](https://github.com/indelingDanil/MyAppVPN/issues/5), әңгімелесу → [#6](https://github.com/indelingDanil/MyAppVPN/issues/6), немесе репозиторийге ⭐ қойыңыз. Жаңа нұсқалар туралы жаңалықтар — [Telegram арнасында](https://t.me/myappvpn_dprog).
 
