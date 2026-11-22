@@ -4,3 +4,7 @@
 *.py   text eol=lf
 *.yml  text eol=lf
 *.txt  text eol=lf
+
+# Landing page (GitHub Pages) is documentation, not the project language
+docs/** linguist-documentation
+site/** linguist-documentation
